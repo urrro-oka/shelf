@@ -47,28 +47,36 @@ public class TestDAO extends DAO {
 		Connection con = getConnection();
 
 		PreparedStatement st = con.prepareStatement(
-				"SELECT student.ent_year,test.class_num,Student_no,student.name,point"
-				+ "FROM test"
-				+ "join student"
-				+ "on student.no=test.Student_no"
+				"SELECT student.ent_year,test.class_num,Student_no,student.name,point,"
+				+ "COALESCE(cast(("
+				+ "select point from test where no='2' "
+				+ "AND subject_cd=? "
+				+ "AND ent_year=? "
+				+ "AND test.class_num=?) AS VARCHAR),'-') AS point2 "
+				+ "FROM test "
+				+ "join student "
+				+ "on student.no=test.Student_no "
 				+ "WHERE subject_cd=? "
-				+ "AND ent_year=?"
-				+ "AND test.class_num=?"
+				+ "AND ent_year=? "
+				+ "AND test.class_num=? "
 				+ "AND test.No = '1'");
 		st.setString(1,test.getSubject_cd());
 		st.setString(2,ent_year);
 		st.setString(3,test.getClass_num());
+		st.setString(4,test.getSubject_cd());
+		st.setString(5,ent_year);
+		st.setString(6,test.getClass_num());
 		ResultSet rs = st.executeQuery();
 
 
 		while(rs.next()){
 			Test p = new Test();
-			p.setStudent_no(rs.getString("student_no"));
-			p.setSubject_cd(rs.getString("subject_cd"));
-			p.setSchool_cd(rs.getString("school_cd"));
-			p.setNo(rs.getInt("no"));
+			p.setEnt_year(rs.getInt("student.ent_year"));
+			p.setClass_num(rs.getString("test.class_num"));
+			p.setStudent_no(rs.getString("Student_no"));
+			p.setStudent_name(rs.getString("student.name"));
 			p.setPoint1(rs.getInt("point"));
-			p.setClass_num(rs.getString("class_num"));
+			p.setPoint2(rs.getString("point2"));
 			list.add(p);
 		}
 

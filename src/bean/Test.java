@@ -9,7 +9,7 @@ public class Test implements java.io.Serializable {
 	private String school_cd;
 	private int no;
 	private int point1;
-	private int point2;
+	private String point2;
 	private String class_num;
 
 	public String getStudent_no(){
@@ -36,7 +36,7 @@ public class Test implements java.io.Serializable {
 	public int getPoint1(){
 		return point1;
 	}
-	public int getPoint2(){
+	public String getPoint2(){
 		return point2;
 	}
 	public String getClass_num(){
@@ -69,7 +69,7 @@ public class Test implements java.io.Serializable {
 	public void setPoint1(int point1){
 		this.point1 = point1;
 	}
-	public void setPoint2(int point2){
+	public void setPoint2(String point2){
 		this.point2 = point2;
 	}
 	public void setClass_num(String class_num){

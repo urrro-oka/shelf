@@ -16,7 +16,7 @@ import dao.StudentDAO;
 import dao.SubjectDAO;
 import dao.TestDAO;
 
-@WebServlet(urlPatterns={"/shelf/shelf"})
+@WebServlet(urlPatterns={"/shelf/test_list"})
 public class Test_list extends HttpServlet {
 
 	public void doGet (
