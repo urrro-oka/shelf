@@ -182,4 +182,46 @@ public class StudentDAO extends DAO {
 
 	}
 
+	public List<Student> Ent_Year() throws Exception {
+		List<Student> list=new ArrayList<>();
+
+		Connection con = getConnection();
+
+		PreparedStatement st = con.prepareStatement(
+				"select DISTINCT ent_year from student ORDER BY ent_year");
+		ResultSet rs = st.executeQuery();
+
+
+		while(rs.next()){
+			Student p = new Student();
+			p.setEnt_year(rs.getInt("ent_year"));
+			list.add(p);
+		}
+		st.close();
+		con.close();
+
+		return list;
+	}
+
+	public List<Student> Class_num() throws Exception {
+		List<Student> list=new ArrayList<>();
+
+		Connection con = getConnection();
+
+		PreparedStatement st = con.prepareStatement(
+				"select DISTINCT Class_num from student ORDER BY Class_num");
+		ResultSet rs = st.executeQuery();
+
+
+		while(rs.next()){
+			Student p = new Student();
+			p.setClass_num(rs.getString("class_num"));
+			list.add(p);
+		}
+		st.close();
+		con.close();
+
+		return list;
+	}
+
 }

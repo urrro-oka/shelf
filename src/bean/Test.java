@@ -2,6 +2,7 @@ package bean;
 
 public class Test implements java.io.Serializable {
 	private String student_no;
+	private String student_name;
 	private String subject_cd;
 	private String subject_name;
 	private int ent_year;
@@ -13,6 +14,9 @@ public class Test implements java.io.Serializable {
 
 	public String getStudent_no(){
 		return student_no;
+	}
+	public String getStudent_name(){
+		return student_name;
 	}
 	public String getSubject_cd(){
 		return subject_cd;
@@ -42,6 +46,9 @@ public class Test implements java.io.Serializable {
 
 	public void setStudent_no(String student_no){
 		this.student_no = student_no;
+	}
+	public void setStudent_name(String student_name){
+		this.student_name = student_name;
 	}
 	public void setSubject_cd(String subject_cd){
 		this.subject_cd = subject_cd;

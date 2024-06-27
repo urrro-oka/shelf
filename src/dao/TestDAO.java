@@ -51,9 +51,13 @@ public class TestDAO extends DAO {
 				+ "FROM test"
 				+ "join student"
 				+ "on student.no=test.Student_no"
-				+ "WHERE subject_cd='?' "
-				+ "AND ent_year='?'"
-				+ "AND student_no='?'");
+				+ "WHERE subject_cd=? "
+				+ "AND ent_year=?"
+				+ "AND test.class_num=?"
+				+ "AND test.No = '1'");
+		st.setString(1,test.getSubject_cd());
+		st.setString(2,ent_year);
+		st.setString(3,test.getClass_num());
 		ResultSet rs = st.executeQuery();
 
 
