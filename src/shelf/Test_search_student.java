@@ -16,8 +16,8 @@ import dao.StudentDAO;
 import dao.SubjectDAO;
 import dao.TestDAO;
 
-@WebServlet(urlPatterns={"/shelf/test_search_subject"})
-public class Test_search_subject extends HttpServlet {
+@WebServlet(urlPatterns={"/shelf/test_search_student"})
+public class Test_search_student extends HttpServlet {
 
 	public void doGet (
 		HttpServletRequest request, HttpServletResponse response
@@ -40,24 +40,16 @@ public class Test_search_subject extends HttpServlet {
 			request.setAttribute("year", list_year);
 			request.setAttribute("num", list_class);
 
-			String ent_year=request.getParameter("ent_year");
-			String class_num=request.getParameter("class_num");
-			String subject=request.getParameter("subject");
+			String id=request.getParameter("student_id");
 
 			Test p =new Test();
-			p.setClass_num(class_num);
-			p.setSubject_cd(subject);
+			p.setStudent_no(id);
 
-			System.out.println(ent_year);
-			System.out.println(p.getClass_num());
-			System.out.println(p.getSubject_cd());
 
 			TestDAO dao=new TestDAO();
-			List<Test> list=dao.Test_search_subject(ent_year,p);
-
-			System.out.println(list);
+			List<Test> list=dao.Test_search_student(p);
 			request.setAttribute("test", list);
-			request.getRequestDispatcher("test_list_subject.jsp").forward(request, response);
+			request.getRequestDispatcher("test_list_student.jsp").forward(request, response);
 
 		} catch (Exception e) {
 			System.out.println("エラーshelf");

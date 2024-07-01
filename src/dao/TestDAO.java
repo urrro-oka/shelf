@@ -47,15 +47,18 @@ public class TestDAO extends DAO {
 		Connection con = getConnection();
 
 		PreparedStatement st = con.prepareStatement(
-				"SELECT student.ent_year,test.class_num,Student_no,student.name,point,"
+				"SELECT subject.name,student.ent_year,test.class_num,Student_no,student.name,point,"
 				+ "COALESCE(cast(("
 				+ "select point from test where no='2' "
 				+ "AND subject_cd=? "
 				+ "AND ent_year=? "
-				+ "AND test.class_num=?) AS VARCHAR),'-') AS point2 "
+				+ "AND test.class_num=? "
+				+ "AND STUDENT_NO=STUDENT.no) AS VARCHAR),'-') AS point2 "
 				+ "FROM test "
 				+ "join student "
 				+ "on student.no=test.Student_no "
+				+ "join subject "
+				+ "on test.subject_cd=subject.cd "
 				+ "WHERE subject_cd=? "
 				+ "AND ent_year=? "
 				+ "AND test.class_num=? "
@@ -77,6 +80,42 @@ public class TestDAO extends DAO {
 			p.setStudent_name(rs.getString("student.name"));
 			p.setPoint1(rs.getInt("point"));
 			p.setPoint2(rs.getString("point2"));
+			p.setSubject_name(rs.getString("subject.name"));
+			list.add(p);
+		}
+
+
+			st.close();
+			con.close();
+
+			return list;
+		}
+	public List<Test> Test_search_student(Test test) throws Exception {
+		List<Test> list=new ArrayList<>();
+
+		Connection con = getConnection();
+
+		PreparedStatement st = con.prepareStatement(
+				"select student.no,student.name ,subject.name,subject.cd,test.no,point "
+				+ "from test "
+				+ "join subject "
+				+ "ON subject.cd = test.subject_cd "
+				+ "join student "
+				+ "on student.no=test.student_no "
+				+ "WHERE student.no=? "
+				+ "ORDER BY subject.cd,test.no");
+		st.setString(1,test.getStudent_no());
+
+		ResultSet rs = st.executeQuery();
+
+
+		while(rs.next()){
+			Test p = new Test();
+			p.setStudent_name(rs.getString("student.name"));
+			p.setSubject_name(rs.getString("subject.name"));
+			p.setSubject_cd(rs.getString("subject.cd"));
+			p.setNo(rs.getInt("test.no"));
+			p.setPoint1(rs.getInt("point"));
 			list.add(p);
 		}
 
