@@ -125,4 +125,43 @@ public class TestDAO extends DAO {
 
 			return list;
 		}
+
+	public List<Test> Test_Ave(String ent_year,Test test) throws Exception {
+		List<Test> list=new ArrayList<>();
+
+		Connection con = getConnection();
+
+		PreparedStatement st = con.prepareStatement(
+				"select "
+				+ "(SELECT AVG(point) FROM test where no =1 ) AS 一回目,"
+				+ "(SELECT AVG(point) FROM test WHERE no=2 ) AS 二回目 "
+				+ "FROM test "
+				+ "where subject_cd='A02'");
+		st.setString(1,test.getSubject_cd());
+		st.setString(2,ent_year);
+		st.setString(3,test.getClass_num());
+		st.setString(4,test.getSubject_cd());
+		st.setString(5,ent_year);
+		st.setString(6,test.getClass_num());
+		ResultSet rs = st.executeQuery();
+
+
+		while(rs.next()){
+			Test p = new Test();
+			p.setEnt_year(rs.getInt("student.ent_year"));
+			p.setClass_num(rs.getString("test.class_num"));
+			p.setStudent_no(rs.getString("Student_no"));
+			p.setStudent_name(rs.getString("student.name"));
+			p.setPoint1(rs.getInt("point"));
+			p.setPoint2(rs.getString("point2"));
+			p.setSubject_name(rs.getString("subject.name"));
+			list.add(p);
+		}
+
+
+			st.close();
+			con.close();
+
+			return list;
+		}
 	}

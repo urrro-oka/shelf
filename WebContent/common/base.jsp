@@ -16,8 +16,8 @@ ${param.scripts}
 		<div class = "all">
 		<div class="sidebar">
 			<p>メニュー</p>
-			<a href="student_list">学生管理</a><br>
-			<a href="test_list">成績管理</a><br>
+			<a href="student_list">学生管理</a><br><br>
+			<a href="test_list">成績管理</a><br><br>
 			<p>科目管理</p>
 		</div>
 			<div class="body">

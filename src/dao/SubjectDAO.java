@@ -10,38 +10,15 @@ import bean.Subject;
 
 public class SubjectDAO extends DAO{
 
-//	一覧
-	public List<Subject> SubjectAll() throws Exception {
-		List<Subject> line=new ArrayList<>();
-
-		Connection con = getConnection();
-
-		PreparedStatement st=con.prepareStatement(
-				"select * from subject") ;
-		ResultSet rs = st.executeQuery();
-
-		while(rs.next()) {
-			Subject p = new Subject();
-			p.setSchool(rs.getString("school_cd"));
-			p.setCd(rs.getString("cd"));
-			p.setName(rs.getString("name"));
-			line.add(p);
-
-		}
-		st.close();
-		con.close();
-
-		return line;
-	}
 
 //登録
-public  int filter(Subject school)throws Exception{
+public  int filter(Subject p)throws Exception{
 	Connection con = getConnection();
 
 	PreparedStatement st = con.prepareStatement(
-			"insert into Subject(school,cd,name) values('oom',?,?)");;
-	st.setString(1,school.getCd());
-	st.setString(2,school.getName());
+			"insert into Subject(school_cd,cd,name) values('oom',?,?)");;
+	st.setString(1,p.getCd());
+	st.setString(2,p.getName());
 	int line = st.executeUpdate();
 
 	st.close();
@@ -64,7 +41,27 @@ public int save (Subject subject)throws Exception{
 	return line;
 
 	}
+public List<Subject> Subject_Prymary(String school) throws Exception {
+	List<Subject> list=new ArrayList<>();
 
+	Connection con = getConnection();
+
+	PreparedStatement st = con.prepareStatement(
+			"SELECT CD 件数 FROM subject WHERE cd=?");
+	st.setString(1,school);
+	ResultSet rs = st.executeQuery();
+
+
+	while(rs.next()){
+		Subject p = new Subject();
+		p.setCd(rs.getString("件数"));
+		list.add(p);
+	}
+	st.close();
+	con.close();
+
+	return list;
+}
 //削除
 public int delete(String cd) throws Exception {
 	Connection con=getConnection();
@@ -78,5 +75,28 @@ public int delete(String cd) throws Exception {
 	con.close();
 	return line;
 	}
+
+public List<Subject> SubjectAll() throws Exception {
+	List<Subject> line=new ArrayList<>();
+
+	Connection con = getConnection();
+
+	PreparedStatement st=con.prepareStatement(
+			"select * from subject") ;
+	ResultSet rs = st.executeQuery();
+
+	while(rs.next()) {
+		Subject p = new Subject();
+		p.setSchool(rs.getString("school_cd"));
+		p.setCd(rs.getString("cd"));
+		p.setName(rs.getString("name"));
+		line.add(p);
+
+	}
+	st.close();
+	con.close();
+
+	return line;
+}
 
 }

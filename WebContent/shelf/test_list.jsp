@@ -13,6 +13,7 @@ pageEncoding="UTF-8"%>
 		<div class="toptitle">
 			<h2 class="h3 mb-3 fw-norma bg-secondary big-opacity-10 py-2 px-4">成績一覧</h2>
 		</div>
+		<a href="#">成績登録</a>
 			<form action=test_search_subject method="get">
 				<div class= "row border mx-3 mb-3 py-2 align-items-center rounded " id="filter">
 

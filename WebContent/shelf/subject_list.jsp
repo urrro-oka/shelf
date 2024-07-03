@@ -12,7 +12,7 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
     <h2>科目管理</h2>
-    <a href="subject_registration.jsp">新規登録</a>
+    <a href="subject_entry.jsp">新規登録</a>
     <table>
         <thead>
             <tr>
