@@ -3,19 +3,20 @@ pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% request.setCharacterEncoding("UTF-8"); %>
 <c:import url="/common/base.jsp">
-
 <c:param name="title">
-			<title>科目情報削除完了</title>
+			<title>-科目変更完了-</title>
 		<div id = "title">得点管理システム</div>
 	</c:param>
 	<c:param name="scripts"></c:param>
 	<c:param name="content">
-    <h2 class="toptitle">科目情報削除完了</h2>
-    <p class="fontsize2">科目情報の削除が完了しました。</p>
+
+
+    <h2 class="toptitle">科目情報・変更完了</h2>
+    <p>登録が完了しました</p>
+    <a href="subject_list" onclick="history.back()">科目一覧</a><br>
+
+
 </body>
-<form action="subject_list">
-    <a href="" onclick="history.back()">戻る</a><br>
-    <input class="btnl" type="submit" value="科目一覧">
-</form>
 </c:param>
+
 </c:import>

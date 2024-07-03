@@ -14,7 +14,7 @@ pageEncoding="UTF-8"%>
 			<h2 class="h3 mb-3 fw-norma bg-secondary big-opacity-10 py-2 px-4">学生管理</h2>
 		</div>
 			<div class="my-2 text-end px-4">
-				<a href="./student_entry.jsp">新規登録</a>
+				<a href="student_entry.jsp">新規登録</a>
 			</div>
 			<form action=student_search method="get">
 				<div class= "row border mx-3 mb-3 py-2 align-items-center rounded " id="filter">
@@ -22,29 +22,18 @@ pageEncoding="UTF-8"%>
 						<label class="form-label" for="student-f1-select">入学年度</label>
 						<select class="form-select" id="student-f1-select" name ="ent_year">
 							<option value="">-----------------</option>
-						 	<option value="2024">2024</option>
-							<option value="2023">2023</option>
-							<option value="2022">2022</option>
-							<option value="2021">2021</option>
-							<option value="2020">2020</option>
-							<option value="2019">2019</option>
-							<option value="2018">2018</option>
-							<option value="2017">2017</option>
-							<option value="2016">2016</option>
-							<option value="2015">2015</option>
+						 		<c:forEach var="year" items="${list_year}">
+								<option value="${year.ent_year}">${year.ent_year}</option>
+								</c:forEach>
 						</select>
 					</div>
 					<div class="col-4 col4-1 line">
 						<label class="form-label" for="student-f2-select">クラス</label>
 							<select class="form-select" id="student-f2-select" name="class_num">
 								<option value="">-------------</option>
-								<option value="101">101</option>
-								<option value="102">102</option>
-								<option value="103">103</option>
-								<option value="104">104</option>
-								<option value="105">105</option>
-								<option value="123">123</option>
-								<option value="131">131</option>
+						 		<c:forEach var="class_num" items="${list_class}">
+								<option value="${class_num.class_num}">${class_num.class_num}</option>
+								</c:forEach>
 							</select>
 					</div>
 					<div class="col-2 form-check text-center line">
@@ -96,7 +85,7 @@ pageEncoding="UTF-8"%>
 	</c:choose>
 	</td>
 	<td><a href="student_transfer.jsp?
-	no=${student.no}&ent_year=${student.ent_year}<%--&name=${student.name}--%>&class_num=${student.class_num}">
+	no=${student.no}&ent_year=${student.ent_year}&name=${student.name}&class_num=${student.class_num}">
 	変更</a></td>
 
 	<td><a href= "student_delete.jsp?

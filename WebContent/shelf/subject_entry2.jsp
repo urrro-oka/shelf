@@ -11,6 +11,7 @@ pageEncoding="UTF-8"%>
 	<c:param name="content">
 <form action="subject_insert" method="get">
     <h2 class="toptitle">科目情報登録</h2>
+    <a><font color="red">同じ科目コードが存在しています！</font></a>
     <p>
         <label>科目コード</label>
         <input type="text" name="cd" value="" maxlength="30" placeholder="科目コードを入力してください">

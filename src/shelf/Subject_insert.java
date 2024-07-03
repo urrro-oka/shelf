@@ -24,17 +24,13 @@ public class Subject_insert extends HttpServlet {
             String cd = request.getParameter("cd");
             String name = request.getParameter("name");
 
-            // パラメータのnullチェック
-            if (school == null || cd == null || name == null || school.isEmpty() || cd.isEmpty() || name.isEmpty()) {
-                throw new IllegalArgumentException("必要なパラメータが不足しています。");
-            }
 
             // SubjectDAOのインスタンス作成
             SubjectDAO dao = new SubjectDAO();
 
             // Primaryキーに基づくチェック
             List<Subject> list = dao.Subject_Prymary(cd);
-
+            System.out.println(list);
             if (list.size() != 1) {
                 // 新しいSubjectオブジェクトの作成
                 Subject p = new Subject();
@@ -47,10 +43,9 @@ public class Subject_insert extends HttpServlet {
 
                 // 挿入成功時のフォワード先
                 request.getRequestDispatcher("subject_entry_comp.jsp").forward(request, response);
+            }else{
+            	request.getRequestDispatcher("subject_entry2.jsp").forward(request, response);
             }
-        } catch (IllegalArgumentException e) {
-            request.setAttribute("errorMessage", e.getMessage());
-            request.getRequestDispatcher("subject_entry.jsp").forward(request, response);
         } catch (Exception e) {
             // エラーハンドリング
             System.out.println("エラーshelf");

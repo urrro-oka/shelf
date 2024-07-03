@@ -1,22 +1,20 @@
-<%@ page contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8" %>
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../css/style.css">
-    <title>得点管理システム</title>
-</head>
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% request.setCharacterEncoding("UTF-8"); %>
+<c:import url="/common/base.jsp">
+<c:param name="title">
+			<title>-科目情報削除-</title>
+		<div id = "title">得点管理システム</div>
+	</c:param>
+	<c:param name="scripts"></c:param>
+	<c:param name="content">
     <% String cd = request.getParameter("cd"); %>
     <% String name = request.getParameter("name"); %>
 
-	<div id="title">得点管理システム</div>
     <h2 class="toptitle">科目情報削除</h2>
-    <p class="fontsize1">「javaプログラミング基礎(FOZ)を削除してもよろしいですか？」</p>
-<form action="subject_delete">
+    <p class="fontsize1">「<%=name %>を削除してもよろしいですか？」</p>
+<form action="subject_delete" method="get">
 <table>
 		<tr>
 		    <th>科目コード</th>
@@ -37,6 +35,7 @@ pageEncoding="UTF-8" %>
 </form>
 
 </body>
-</html>
+</c:param>
+</c:import>
 
 

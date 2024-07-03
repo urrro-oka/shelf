@@ -40,13 +40,6 @@ pageEncoding="UTF-8"%>
     <th><label>クラス</label></th><td>
         <select name="class_num">
         	<option value="<%=class_num %>"><%=class_num %></option>
-            <option value="101">101</option>
-            <option value="102">102</option>
-            <option value="103">103</option>
-            <option value="104">104</option>
-            <option value="105">105</option>
-            <option value="123">123</option>
-            <option value="131">131</option>
         </select></td></tr>
 </table>
 <div class="pos">

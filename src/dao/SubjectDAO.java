@@ -82,7 +82,7 @@ public List<Subject> SubjectAll() throws Exception {
 	Connection con = getConnection();
 
 	PreparedStatement st=con.prepareStatement(
-			"select * from subject") ;
+			"select * from subject ORDER BY cd") ;
 	ResultSet rs = st.executeQuery();
 
 	while(rs.next()) {
@@ -98,5 +98,18 @@ public List<Subject> SubjectAll() throws Exception {
 
 	return line;
 }
+public int Subject_Update(Subject subject) throws Exception {
+	Connection con=getConnection();
+	PreparedStatement st=con.prepareStatement(
+			"update SUBJECT SET name = ? WHERE  cd = ? ");
 
+	st.setString(1, subject.getName());
+	st.setString(2, subject.getCd());
+	int line=st.executeUpdate();
+
+	st.close();
+	con.close();
+	return line;
+
+}
 }

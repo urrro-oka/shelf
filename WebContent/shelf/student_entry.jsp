@@ -13,19 +13,7 @@ pageEncoding="UTF-8"%>
     <form action="student_insert">
     <p>
         <label>入学年度</label>
-        <select name="ent_year" required>
-            <option value="">--------</option>
-            <option value="2015">2015</option>
-            <option value="2016">2016</option>
-            <option value="2017">2017</option>
-            <option value="2018">2018</option>
-            <option value="2019">2019</option>
-            <option value="2020">2020</option>
-            <option value="2021">2021</option>
-            <option value="2022">2022</option>
-            <option value="2023">2023</option>
-            <option value="2024">2024</option>
-        </select>
+        <input name="ent_year" type="text" required>
     </p>
 
     <p>
@@ -41,12 +29,6 @@ pageEncoding="UTF-8"%>
     <p>
         <label>クラス</label>
         <select name="class_num">
-            <option value="101">101</option>
-            <option value="102">102</option>
-            <option value="103">103</option>
-            <option value="104">104</option>
-            <option value="105">105</option>
-            <option value="123">123</option>
             <option value="131">131</option>
         </select>
     </p>
