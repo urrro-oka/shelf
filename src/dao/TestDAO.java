@@ -233,6 +233,7 @@ public class TestDAO extends DAO {
 		return list;
 	}
 
+
 	public int Test_Delete(String no) throws Exception {
 		Connection con=getConnection();
 		PreparedStatement st=con.prepareStatement(
