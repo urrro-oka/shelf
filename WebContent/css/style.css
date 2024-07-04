@@ -10,7 +10,10 @@
   	background: linear-gradient(90deg, #a59aca, #fff);
 	font-family: serif;
 }
-
+a{
+	text-decoration: none;
+	border:1px;
+}
 .fontsize1{
   font-size: 1.2em;
 }

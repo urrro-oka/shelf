@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import bean.Student;
 import bean.Test;
 
 public class TestDAO extends DAO {
@@ -164,4 +165,90 @@ public class TestDAO extends DAO {
 
 			return list;
 		}
+
+
+
+	public List<Test> Test_Prymary(int num) throws Exception {
+		List<Test> list=new ArrayList<>();
+
+		Connection con = getConnection();
+
+		PreparedStatement st = con.prepareStatement(
+				"SELECT NO 件数 FROM TEST WHERE NO=?");
+		st.setInt(1,num);
+		ResultSet rs = st.executeQuery();
+
+
+		while(rs.next()){
+			Test p = new Test();
+			p.setNo(rs.getInt("回数"));
+			list.add(p);
+		}
+		st.close();
+		con.close();
+
+		return list;
+	}
+
+	public int Test_insert(Test Test) throws Exception {
+
+		Connection con = getConnection();
+
+		PreparedStatement st = con.prepareStatement(
+				"insert into Test(sutudent_no, class_num, subject_cd, no, point) values(?,?,?,?)");
+
+		st.setString(1,Test.getStudent_no()); //学生番号
+		st.setString(2,Test.getClass_num()); //クラス
+		st.setString(3,Test.getSubject_cd()); //科目名
+		st.setInt(4,Test.getNo()); //回数
+		st.setInt(5,Test.getPoint1()); //点数
+
+		int line = st.executeUpdate();
+
+		st.close();
+		con.close();
+
+		return line;
+	}
+
+	public List<Student> Test_Prymary(String test_num) throws Exception {
+		List<Student> list=new ArrayList<>();
+
+		Connection con = getConnection();
+
+		PreparedStatement st = con.prepareStatement(
+				"SELECT NO as 回数 FROM TEST WHERE NO=?");
+		st.setString(1,test_num);
+		ResultSet rs = st.executeQuery();
+
+
+		while(rs.next()){
+			Student p = new Student();
+			p.setNo(rs.getString("回数"));
+			list.add(p);
+		}
+		st.close();
+		con.close();
+
+		return list;
+	}
+
+	public int Test_Delete(String no) throws Exception {
+		Connection con=getConnection();
+		PreparedStatement st=con.prepareStatement(
+				"delete test where no = ?");
+
+		st.setString(1, no);
+
+		int line=st.executeUpdate();
+
+
+		st.close();
+		con.close();
+		return line;
+
+	}
+
+
+
 	}

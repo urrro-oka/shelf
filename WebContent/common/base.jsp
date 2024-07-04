@@ -15,7 +15,7 @@ ${param.scripts}
 		<section class= "me-4">
 		<div class = "all">
 		<div class="sidebar">
-			<p>メニュー</p>
+			<br><a href="menu.jsp">メニュー</a><br><br>
 			<a href="student_list">学生管理</a><br><br>
 			<a href="test_list">成績管理</a><br><br>
 			${param.side }
