@@ -30,7 +30,7 @@ pageEncoding="UTF-8"%>
 <input type="hidden" name="cd" value="<%=cd %>">
 <input class="btnl" type="submit" value="削除する">
 
-<p><a href="" onclick="history.back()">戻る</a></p>
+<p><a href="#" onclick="history.back()">戻る</a></p>
 
 </form>
 

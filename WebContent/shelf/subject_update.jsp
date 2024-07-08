@@ -14,13 +14,18 @@ pageEncoding="UTF-8"%>
 		<h2 class="toptitle">科目情報変更</h2>
 
 <form action="subject_update" method="get">
-<label>科目コード:</label>
+<table>
+	<tr>
+		<th>科目コード</th>
+		<td><input type="text" name="cd" value="<%=cd %>" readonly style="border: none;" /></td>
+	</tr>
 
-<input type="text" name="cd" value="<%=cd %>" readonly style="border: none;" /><br>
-<label>科目名:</label>
-<input type="text" name="name" value="<%=name %>" maxlength="20" required /><br>
-
-<input type="submit" value="変更">
+	<tr>
+		<th>科目名:</th>
+		<td><input type="text" name="name" value="<%=name %>" maxlength="20" required /></td>
+	</tr>
+</table>
+<input class="btn" type="submit" value="変更">
 </form>
 <a href="subject_list">戻る</a>
 </body>
