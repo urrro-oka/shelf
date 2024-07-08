@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import bean.Subject;
 import bean.Test;
 
 public class TestDAO extends DAO {
@@ -227,6 +228,29 @@ public class TestDAO extends DAO {
 		con.close();
 		return line;
 
+	}
+
+	public List<Subject> SubjectAll() throws Exception {
+		List<Subject> line=new ArrayList<>();
+
+		Connection con = getConnection();
+
+		PreparedStatement st=con.prepareStatement(
+				"select * from subject ORDER BY cd") ;
+		ResultSet rs = st.executeQuery();
+
+		while(rs.next()) {
+			Subject p = new Subject();
+			p.setSchool(rs.getString("school_cd"));
+			p.setCd(rs.getString("cd"));
+			p.setName(rs.getString("name"));
+			line.add(p);
+
+		}
+		st.close();
+		con.close();
+
+		return line;
 	}
 
 
