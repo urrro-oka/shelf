@@ -10,6 +10,7 @@ pageEncoding="UTF-8"%>
 	<c:param name="scripts"></c:param>
 	<c:param name="content">
 
+
     <% String ent_year = request.getParameter("ent_year"); %>
     <% String no = request.getParameter("no"); %>
     <% String name = request.getParameter("name"); %>

@@ -3,6 +3,7 @@
 <% request.setCharacterEncoding("UTF-8"); %>
 
 <c:import url="/common/base.jsp">
+
     <c:param name="title">
         <title>得点管理システム</title>
         <div id="title">得点管理システム</div>
@@ -23,6 +24,7 @@
                             <option value="${year.ent_year}">${year.ent_year}</option>
                         </c:forEach>
                     </select>
+
                 </div>
                 <div class="col-4 col4-1 line">
                     <label class="form-label" for="student-f2-select">クラス</label>
