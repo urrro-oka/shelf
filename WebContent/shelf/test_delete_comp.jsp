@@ -9,7 +9,7 @@ pageEncoding="UTF-8"%>
 	</c:param>
 	<c:param name="scripts"></c:param>
 	<c:param name="content">
-<form action="student_list">
+<form action="test_list">
     <h2 class="toptitle">成績削除</h2>
     <p>削除が完了しました</p>
     <a href="#" onclick="history.back()">戻る</a><br>

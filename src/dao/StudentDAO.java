@@ -227,16 +227,16 @@ public class StudentDAO extends DAO {
 		Connection con=getConnection();
 		PreparedStatement st=con.prepareStatement(
 				"delete test where no = ?");
- 
+
 		st.setString(1, no);
- 
+
 		int line=st.executeUpdate();
- 
- 
+
+
 		st.close();
 		con.close();
 		return line;
- 
+
 	}
 
 }

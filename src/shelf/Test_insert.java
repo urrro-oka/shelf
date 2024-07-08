@@ -25,9 +25,9 @@ public class Test_insert extends HttpServlet {
 			String subject_cd=request.getParameter("subject_cd");
 			int no=Integer.parseInt(request.getParameter("no"));
 			int point=Integer.parseInt(request.getParameter("point"));
-
+			System.out.println(student_no);
 			TestDAO dao=new TestDAO();
-			List<Test> list=dao.Test_Prymary(no);
+			List<Test> list=dao.Test_Prymary(no, student_no, subject_cd);
 
 
 			if(list.size() != 1){
