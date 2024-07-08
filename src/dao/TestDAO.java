@@ -22,18 +22,29 @@ public class TestDAO extends DAO {
 		Connection con = getConnection();
 
 		PreparedStatement st = con.prepareStatement(
-				"select * from test");
+				"SELECT subject.name,student.ent_year,test.class_num,Student_no,student.name,point,"
+				+ "COALESCE(cast(("
+				+ "select point from test where no='2' "
+				+ "AND STUDENT_NO=STUDENT.no) AS VARCHAR),'-') AS point2 "
+				+ "FROM test "
+				+ "join student "
+				+ "on student.no=test.Student_no "
+				+ "join subject "
+				+ "on test.subject_cd=subject.cd "
+				+ "WHERE "
+				+ " test.No = '1'");
 		ResultSet rs = st.executeQuery();
 
 
 		while(rs.next()){
 			Test p = new Test();
-			p.setStudent_no(rs.getString("student_no"));
-			p.setSubject_cd(rs.getString("subject_cd"));
-			p.setSchool_cd(rs.getString("school_cd"));
-			p.setNo(rs.getInt("no"));
+			p.setEnt_year(rs.getInt("student.ent_year"));
+			p.setClass_num(rs.getString("test.class_num"));
+			p.setStudent_no(rs.getString("Student_no"));
+			p.setStudent_name(rs.getString("student.name"));
 			p.setPoint1(rs.getInt("point"));
-			p.setClass_num(rs.getString("class_num"));
+			p.setPoint2(rs.getString("point2"));
+			p.setSubject_name(rs.getString("subject.name"));
 			list.add(p);
 		}
 		st.close();
