@@ -11,9 +11,9 @@ pageEncoding="UTF-8"%>
 	<c:param name="content">
 
     <h2 class="toptitle">メインメニュー</h2>
-    	<a href="student_list" >学生一覧</a>
-    	<a href="test_list" >成績一覧</a>
-		<a href="subject_list" >科目一覧</a>
+    	<a href="student_list" class="menubox">学生一覧</a>
+    	<a href="test_list" class="menubox">成績一覧</a>
+		<a href="subject_list" class="menubox">科目一覧</a>
 
 
 </c:param>
