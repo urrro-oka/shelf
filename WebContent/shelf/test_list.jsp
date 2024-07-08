@@ -40,7 +40,7 @@
                     <select class="form-select" id="student-f2-select" name="subject" required>
                         <option value="">-------------</option>
                         <c:forEach var="subject" items="${subject}">
-                            <option value="${subject.name}">${subject.name}</option>
+                            <option value="${subject.cd}">${subject.name}</option>
                         </c:forEach>
                     </select>
                 </div>
@@ -50,19 +50,22 @@
             </div>
         </form>
 
-        <form action="test_student_list" method="get">
+        <form action="test_search_student" method="get">
             <div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
                 <div>学生情報</div>
                 <label>学生番号</label>
-                <input type="text" placeholder="学生番号を入力してください" name="class_num" required>
+                <input type="text" placeholder="学生番号を入力してください" name="student_id" required>
                 <div class="col-2 text-center line">
                     <button class="btn btn-secondary" id="filter-button">検索</button>
                 </div>
                 <div class="st-2 text-warning">${errors.get("f1")}</div>
             </div>
         </form>
-		<div class="fontsize1">全データ表示 (${test.size()}件)</div>
-			    <table class="table table-hover">
+
+        <c:choose>
+            <c:when test="${test.size() > 0}">
+            <div class="fontsize1">全データ表示 (${test.size()}件)</div>
+                <table class="table table-hover">
 			        <tr>
 			            <th>入学年度</th>
 			            <th>クラス</th>
@@ -72,7 +75,7 @@
 			            <th>１回目</th>
 			            <th>２回目</th>
 			        </tr>
-			        <c:forEach var="all" items="${test}">
+                       <c:forEach var="all" items="${test}">
 			            <tr>
 			                <td>${all.ent_year}</td>
 			                <td>${all.class_num}</td>
@@ -82,36 +85,6 @@
 			                <td>${all.point1}</td>
 			                <td>${all.point2}</td>
 
-			            </tr>
-			        </c:forEach>
-			    </table>
-
-        <c:choose>
-            <c:when test="${student.size() > 0}">
-                <div class="fontsize1">検索結果: ${student.size()}件</div>
-                <table class="table table-hover">
-                    <tr>
-                        <th>入学年度</th>
-                        <th>学生番号</th>
-                        <th>氏名</th>
-                        <th>クラス</th>
-                    </tr>
-                    <c:forEach var="student" items="${student}">
-                        <tr>
-                            <td>${student.ent_year}</td>
-                            <td>${student.no}</td>
-                            <td>${student.name}</td>
-                            <td>${student.class_num}</td>
-                            <td class="text-center">
-                                <c:choose>
-                                    <c:when test="${student.is_attend}">
-                                        〇
-                                    </c:when>
-                                    <c:otherwise>
-                                        ×
-                                    </c:otherwise>
-                                </c:choose>
-                            </td>
                             <td>
                                 <a href="student_transfer.jsp?no=${student.no}&ent_year=${student.ent_year}&class_num=${student.class_num}">変更</a>
                             </td>
@@ -123,7 +96,7 @@
                 </table>
             </c:when>
             <c:otherwise>
-                <div class="fontsize1"></div>
+                <div class="fontsize1">成績データはは存在しません</div>
             </c:otherwise>
         </c:choose>
     </c:param>

@@ -41,7 +41,7 @@ public class Test_search_student extends HttpServlet {
 			request.setAttribute("num", list_class);
 
 			String id=request.getParameter("student_id");
-
+System.out.println(id);
 			Test p =new Test();
 			p.setStudent_no(id);
 
