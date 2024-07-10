@@ -24,8 +24,10 @@ pageEncoding="UTF-8"%>
             <tr>
                 <td>${subject.cd}</td>
                 <td>${subject.name}</td>
+                <td>${subject.passed_point}</td>
 
 
+                <td><a href="subject_make_up.jsp?cd=${subject.cd}&name=${subject.name}">合格ライン</a></td>
                 <td><a href="subject_update.jsp?cd=${subject.cd}&name=${subject.name}">変更</a>・
                <a href="subject_delete.jsp?cd=${subject.cd}&name=${subject.name}">削除</a></td>
             </tr>

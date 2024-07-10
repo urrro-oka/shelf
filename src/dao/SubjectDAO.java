@@ -90,6 +90,7 @@ public List<Subject> SubjectAll() throws Exception {
 		p.setSchool(rs.getString("school_cd"));
 		p.setCd(rs.getString("cd"));
 		p.setName(rs.getString("name"));
+		p.setPassed_point(rs.getInt("make_up"));
 		line.add(p);
 
 	}
@@ -104,6 +105,21 @@ public int Subject_Update(Subject subject) throws Exception {
 			"update SUBJECT SET name = ? WHERE  cd = ? ");
 
 	st.setString(1, subject.getName());
+	st.setString(2, subject.getCd());
+	int line=st.executeUpdate();
+
+	st.close();
+	con.close();
+	return line;
+
+
+}
+public int Subject_Make_Up(Subject subject) throws Exception {
+	Connection con=getConnection();
+	PreparedStatement st=con.prepareStatement(
+			"update SUBJECT SET make_up = ? WHERE  cd = ? ");
+
+	st.setInt(1, subject.getPassed_point());
 	st.setString(2, subject.getCd());
 	int line=st.executeUpdate();
 
