@@ -7,6 +7,9 @@ pageEncoding="UTF-8"%>
 			<title>得点管理システム</title>
 		<div id = "title">得点管理システム</div>
 	</c:param>
+
+	<c:param name="side">　　<a href="#">成績登録</a><br></c:param>
+
 	<c:param name="scripts"></c:param>
 	<c:param name="content">
 
