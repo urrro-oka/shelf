@@ -10,18 +10,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.TestDAO;
 
-@WebServlet(urlPatterns={"/shelf/test_delete"})
-public class Test_Delete extends HttpServlet {
+@WebServlet(urlPatterns={"/shelf/test_delete2"})
+public class Test_Delete2 extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         try {
             String student_no=request.getParameter("student_no");
-            String subject_cd=request.getParameter("subject_cd");
+            String student_name=request.getParameter("student_name");
 
             TestDAO dao=new TestDAO();
-            int line=dao.subject_delete(student_no, subject_cd);
-
+            int line=dao.student_delete(student_no, student_name);
 
             request.getRequestDispatcher("test_delete_comp.jsp").forward(request, response);
 
