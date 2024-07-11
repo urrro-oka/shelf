@@ -21,6 +21,18 @@ a{
     border-radius: 5px;
     padding: 5px;
 }
+.fontsize3{
+	display:inline-block;
+	color:black;
+	box-shadow: 2px 2px 2px #c0c0c0;
+	text-decoration: none;
+	background-color: #ffffff;
+    margin: 10px 10px 10px 10px;
+    border: 1px solid #400080;
+    border-radius: 5px;
+    padding: 5px;
+}
+
 .menubox{
 	padding: 7% 10%;
 	font-size: 1.5em;
@@ -195,6 +207,8 @@ table tr{
 table th{
 	font-family: sans-serif;
   background-color: #ddD9FF;
+  position:sticky;
+  top:0;
 }
 
 table th,table td{

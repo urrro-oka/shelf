@@ -20,6 +20,7 @@ ${param.scripts}
 			<a href="test_list">成績管理</a><br>
 			${param.side }
 			<a href="subject_list">科目管理</a><br>
+			${param.side_sub }
 		</div>
 			<div class="body">
 ${param.content}

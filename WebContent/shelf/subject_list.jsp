@@ -7,6 +7,9 @@ pageEncoding="UTF-8"%>
 			<title>-科目一覧-</title>
 		<div id = "title">得点管理システム</div>
 	</c:param>
+
+	<c:param name="side_sub">　　<a href="subject_entry.jsp">科目登録</a><br></c:param>
+
 	<c:param name="scripts"></c:param>
 	<c:param name="content">
     <h2 class="toptitle">科目管理</h2>
@@ -16,6 +19,8 @@ pageEncoding="UTF-8"%>
             <tr>
                 <th>科目コード</th>
                 <th>科目名</th>
+                <th>合格ライン</th>
+                <th></th>
                 <th></th>
             </tr>
         </thead>

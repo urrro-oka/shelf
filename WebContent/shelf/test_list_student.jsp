@@ -79,6 +79,8 @@ pageEncoding="UTF-8"%>
 					<th>科目コード</th>
 					<th>回数</th>
 					<th>点数</th>
+					<th>合格ライン</th>
+					<th>追試</th>
 				</tr>
 	<c:forEach var="test" items="${test}">
 		<tr>
@@ -86,7 +88,16 @@ pageEncoding="UTF-8"%>
 			<td>${test.subject_cd}</td>
 			<td>${test.no}</td>
 			<td>${test.point1}</td>
-
+			<td>${test.make_up}</td>
+			<td>
+			<c:choose>
+				<c:when test="${test.point1>test.make_up}">
+				なし
+				</c:when>
+				<c:otherwise>
+				あり
+				</c:otherwise>
+			</c:choose>
 	<td><a href="student_transfer.jsp?
 	no=${student.no}&ent_year=${student.ent_year}<%--&name=${student.name}--%>&class_num=${student.class_num}">
 	変更</a></td>

@@ -10,6 +10,9 @@ public class Test implements java.io.Serializable {
 	private int no;
 	private int point1;
 	private String point2;
+	private int avg_point1;
+	private int avg_point2;
+	private int make_up;
 	private String class_num;
 
 	public String getStudent_no(){
@@ -38,6 +41,15 @@ public class Test implements java.io.Serializable {
 	}
 	public String getPoint2(){
 		return point2;
+	}
+	public int getAvg_point1(){
+		return avg_point1;
+	}
+	public int getAvg_point2(){
+		return avg_point2;
+	}
+	public int getMake_up(){
+		return make_up;
 	}
 	public String getClass_num(){
 		return class_num;
@@ -71,6 +83,15 @@ public class Test implements java.io.Serializable {
 	}
 	public void setPoint2(String point2){
 		this.point2 = point2;
+	}
+	public void setAvg_point1(int avg_point1){
+		this.avg_point1 = avg_point1;
+	}
+	public void setAvg_point2(int avg_point2){
+		this.avg_point2 = avg_point2;
+	}
+	public void setMake_up(int make_up){
+		this.make_up = make_up;
 	}
 	public void setClass_num(String class_num){
 		this.class_num = class_num;

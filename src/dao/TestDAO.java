@@ -22,7 +22,7 @@ public class TestDAO extends DAO {
 		Connection con = getConnection();
 
 		PreparedStatement st = con.prepareStatement(
-				"SELECT subject.name,student.ent_year,test.class_num,Student_no,student.name,point,"
+				"SELECT subject.name,student.ent_year,test.class_num,Student_no,student.name,point, "
 				+ "COALESCE(cast(("
 				+ "select point from test where no='2' "
 				+ "AND STUDENT_NO=STUDENT.no) AS VARCHAR),'-') AS point2 "
@@ -108,7 +108,8 @@ public class TestDAO extends DAO {
 		Connection con = getConnection();
 
 		PreparedStatement st = con.prepareStatement(
-				"select student.no,student.name ,subject.name,subject.cd,test.no,point "
+				"select student.no,student.name ,subject.name,subject.cd,test.no,point, "
+				+ "subject.make_up "
 				+ "from test "
 				+ "join subject "
 				+ "ON subject.cd = test.subject_cd "
@@ -128,6 +129,7 @@ public class TestDAO extends DAO {
 			p.setSubject_cd(rs.getString("subject.cd"));
 			p.setNo(rs.getInt("test.no"));
 			p.setPoint1(rs.getInt("point"));
+			p.setMake_up(rs.getInt("make_up"));
 			list.add(p);
 		}
 
@@ -138,35 +140,24 @@ public class TestDAO extends DAO {
 			return list;
 		}
 
-	public List<Test> Test_Ave(String ent_year,Test test) throws Exception {
+	public List<Test> Test_Avg(String subject_cd) throws Exception {
 		List<Test> list=new ArrayList<>();
 
 		Connection con = getConnection();
 
 		PreparedStatement st = con.prepareStatement(
-				"select "
-				+ "(SELECT AVG(point) FROM test where no =1 ) AS 一回目,"
-				+ "(SELECT AVG(point) FROM test WHERE no=2 ) AS 二回目 "
-				+ "FROM test "
-				+ "where subject_cd='A02'");
-		st.setString(1,test.getSubject_cd());
-		st.setString(2,ent_year);
-		st.setString(3,test.getClass_num());
-		st.setString(4,test.getSubject_cd());
-		st.setString(5,ent_year);
-		st.setString(6,test.getClass_num());
+				"select (SELECT AVG(point) FROM test where no =1 AND subject_cd=?) AS 一回目,"
+				+ "(SELECT AVG(point) FROM test WHERE no =2 AND subject_cd=?) AS 二回目 "
+				+ "FROM test ");
+		st.setString(1,subject_cd);
+		st.setString(2,subject_cd);
 		ResultSet rs = st.executeQuery();
 
 
 		while(rs.next()){
 			Test p = new Test();
-			p.setEnt_year(rs.getInt("student.ent_year"));
-			p.setClass_num(rs.getString("test.class_num"));
-			p.setStudent_no(rs.getString("Student_no"));
-			p.setStudent_name(rs.getString("student.name"));
-			p.setPoint1(rs.getInt("point"));
-			p.setPoint2(rs.getString("point2"));
-			p.setSubject_name(rs.getString("subject.name"));
+			p.setAvg_point1(rs.getInt("一回目"));
+			p.setAvg_point2(rs.getInt("二回目"));
 			list.add(p);
 		}
 
@@ -241,6 +232,7 @@ public class TestDAO extends DAO {
 
 	}
 
+
 	public List<Subject> SubjectAll() throws Exception {
 		List<Subject> line=new ArrayList<>();
 
@@ -263,6 +255,7 @@ public class TestDAO extends DAO {
 
 		return line;
 	}
+
 
 
 
