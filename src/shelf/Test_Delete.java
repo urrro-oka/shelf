@@ -12,23 +12,20 @@ import dao.TestDAO;
 
 @WebServlet(urlPatterns={"/shelf/test_delete"})
 public class Test_Delete extends HttpServlet {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            String no = request.getParameter("no");
+            String student_no=request.getParameter("student_no");
+            String subject_cd=request.getParameter("subject_cd");
 
-            TestDAO dao = new TestDAO();
-            int line = dao.Test_Delete(no);
+            System.out.println(student_no);
+            System.out.println(student_no);
+
+            TestDAO dao=new TestDAO();
+            int line=dao.Test_Delete(student_no,subject_cd);
+
+
             request.getRequestDispatcher("test_delete_comp.jsp").forward(request, response);
 
         } catch (Exception e) {

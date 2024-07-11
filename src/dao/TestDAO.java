@@ -59,7 +59,7 @@ public class TestDAO extends DAO {
 		Connection con = getConnection();
 
 		PreparedStatement st = con.prepareStatement(
-				"SELECT subject.name,student.ent_year,test.class_num,Student_no,student.name,point,"
+				"SELECT subject.name,subject.cd,student.ent_year,test.class_num,Student_no,student.name,point,"
 				+ "COALESCE(cast(("
 				+ "select point from test where no='2' "
 				+ "AND subject_cd=? "
@@ -93,6 +93,7 @@ public class TestDAO extends DAO {
 			p.setPoint1(rs.getInt("point"));
 			p.setPoint2(rs.getString("point2"));
 			p.setSubject_name(rs.getString("subject.name"));
+			p.setSubject_cd(rs.getString("subject.cd"));
 			list.add(p);
 		}
 
@@ -216,12 +217,13 @@ public class TestDAO extends DAO {
 		return line;
 	}
 
-	public int Test_Delete(String no) throws Exception {
+	public int Test_Delete(String student_no,String subject_cd) throws Exception {
 		Connection con=getConnection();
 		PreparedStatement st=con.prepareStatement(
-				"delete test where no = ?");
+				"delete test where student_no = ? AND subject_cd = ?");
 
-		st.setString(1, no);
+		st.setString(1, student_no);
+		st.setString(2, subject_cd);
 
 		int line=st.executeUpdate();
 
