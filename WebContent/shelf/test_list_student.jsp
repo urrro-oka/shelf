@@ -75,16 +75,18 @@
 		</form>
 		<c:choose>
 			<c:when test="${test.size()>0}">
-				<div class="fontsize1">検索科目:${test.get(0).subject_name}</div>
-				<table class="table table-hover">
-					<tr>
-						<th>入学年度</th>
-						<th>クラス</th>
-						<th>学生番号</th>
-						<th>氏名</th>
-						<th>１回</th>
-						<th>２回</th>
-					</tr>
+
+				<div class = "fontsize3">学生名:${test.get(0).student_name}</div>
+					<table class="table table-hover">
+						<tr>
+							<th>科目名</th>
+							<th>科目コード</th>
+							<th>回数</th>
+							<th>点数</th>
+							<th>合格ライン</th>
+							<th>追試</th>
+						</tr>
+
 					<c:forEach var="test" items="${test}">
 						<tr>
 							<td>${test.ent_year}</td>
@@ -111,7 +113,12 @@
 				<div>成績情報が存在しませんでした</div>
 
 
+<<<<<<< HEAD
 			</c:otherwise>
 		</c:choose>
+=======
+				</c:otherwise>
+			</c:choose>
+>>>>>>> branch 'master' of https://github.com/urrro-oka/shelf.git
 	</c:param>
 </c:import>

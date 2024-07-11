@@ -12,8 +12,8 @@ pageEncoding="UTF-8"%>
 <form action="test_list">
     <h2 class="toptitle">成績削除</h2>
     <p>削除が完了しました</p>
-    <a href="#" onclick="history.back()">戻る</a><br>
     <input class="btn" type="submit" value = "成績参照">
+    <a href="#" onclick="history.back()">戻る</a><br>
 </form>
 
 </c:param>
