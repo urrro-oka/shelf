@@ -113,12 +113,7 @@
 				<div>成績情報が存在しませんでした</div>
 
 
-<<<<<<< HEAD
 			</c:otherwise>
 		</c:choose>
-=======
-				</c:otherwise>
-			</c:choose>
->>>>>>> branch 'master' of https://github.com/urrro-oka/shelf.git
 	</c:param>
 </c:import>
