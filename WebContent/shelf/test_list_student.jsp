@@ -74,46 +74,49 @@
 			</div>
 		</form>
 		<c:choose>
-			<c:when test="${test.size()>0}">
-
-				<div class = "fontsize3">学生名:${test.get(0).student_name}</div>
-					<table class="table table-hover">
-						<tr>
-							<th>科目名</th>
-							<th>科目コード</th>
-							<th>回数</th>
-							<th>点数</th>
-							<th>合格ライン</th>
-							<th>追試</th>
-						</tr>
-
-					<c:forEach var="test" items="${test}">
-						<tr>
-							<td>${test.ent_year}</td>
-							<td>${test.class_num}</td>
-							<td>${test.student_no}</td>
-							<td>${test.student_name}</td>
-							<td>${test.point1}</td>
-							<td>${test.point2}</td>
-
-							<td><a
-								href="student_transfer.jsp?
+<c:when test="${test.size()>0}">
+<div class = "fontsize1">学生名:${test.get(0).student_name}</div>
+<table class="table table-hover">
+<tr>
+<th>科目名</th>
+<th>科目コード</th>
+<th>回数</th>
+<th>点数</th>
+<th>合格ライン</th>
+<th>追試</th>
+</tr>
+<c:forEach var="test" items="${test}">
+<tr>
+<td>${test.subject_name}</td>
+<td>${test.subject_cd}</td>
+<td>${test.no}</td>
+<td>${test.point1}</td>
+<td>${test.make_up}</td>
+<td>
+<c:choose>
+<c:when test="${test.point1>test.make_up}">
+				なし
+</c:when>
+<c:otherwise>
+				あり
+</c:otherwise>
+</c:choose>
+<td><a href="student_transfer.jsp?
 	no=${student.no}&ent_year=${student.ent_year}<%--&name=${student.name}--%>&class_num=${student.class_num}">
-									変更</a></td>
+	変更</a></td>
 
-							<td><a
-								href="test_delete2.jsp?
-	student_name=${test.student_name}&subject_cd=${test.subject_cd}
-	&subject_name=${test.subject_name}&no=${test.no}&point1=${test.point1}&point2=${test.point2}">削除</a></td>
-						</tr>
-					</c:forEach>
-				</table>
-			</c:when>
-			<c:otherwise>
-				<div>成績情報が存在しませんでした</div>
+	<td><a href= "student_delete.jsp?
+	no=${student.no}&ent_year=${student.ent_year}
+<%--&name=${student.name}--%>&class_num=${student.class_num}">削除</a></td>
+</tr>
+</c:forEach>
+</table>
+</c:when>
+<c:otherwise>
+<div>成績情報が存在しませんでした</div>
 
 
-			</c:otherwise>
-		</c:choose>
+	</c:otherwise>
+</c:choose>
 	</c:param>
 </c:import>
