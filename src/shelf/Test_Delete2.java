@@ -17,10 +17,11 @@ public class Test_Delete2 extends HttpServlet {
 
         try {
             String student_no=request.getParameter("student_no");
-            String student_name=request.getParameter("student_name");
+            String subject_cd=request.getParameter("subject_cd");
+            String no=request.getParameter("no");
 
             TestDAO dao=new TestDAO();
-            int line=dao.student_delete(student_no, student_name);
+            int line=dao.student_delete(student_no, subject_cd, no);
 
             request.getRequestDispatcher("test_delete_comp.jsp").forward(request, response);
 

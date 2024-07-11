@@ -69,6 +69,7 @@ pageEncoding="UTF-8"%>
 		</form>
 		<c:choose>
 			<c:when test="${test.size()>0}">
+
 				<div class = "fontsize3">学生名:${test.get(0).student_name}</div>
 					<table class="table table-hover">
 						<tr>
