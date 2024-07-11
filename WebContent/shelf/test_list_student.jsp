@@ -7,14 +7,11 @@ pageEncoding="UTF-8"%>
 			<title>得点管理システム</title>
 		<div id = "title">得点管理システム</div>
 	</c:param>
-
-	<c:param name="side">　　<a href="#">成績登録</a><br></c:param>
-
 	<c:param name="scripts"></c:param>
 	<c:param name="content">
 
 		<div class="toptitle">
-			<h2 class="h3 mb-3 fw-norma bg-secondary big-opacity-10 py-2 px-4">成績一覧(生徒別)</h2>
+			<h2 class="h3 mb-3 fw-norma bg-secondary big-opacity-10 py-2 px-4">成績一覧(科目別)</h2>
 		</div>
 				<a href="#">成績登録</a>
 			<form action=test_search_subject method="get">
@@ -72,39 +69,33 @@ pageEncoding="UTF-8"%>
 		</form>
 		<c:choose>
 			<c:when test="${test.size()>0}">
-				<div class = "fontsize1">学生名:${test.get(0).student_name}</div>
+				<div class = "fontsize1">検索科目:${test.get(0).subject_name}</div>
 				<table class="table table-hover">
 				<tr>
-					<th>科目名</th>
-					<th>科目コード</th>
-					<th>回数</th>
-					<th>点数</th>
-					<th>合格ライン</th>
-					<th>追試</th>
+					<th>入学年度</th>
+					<th>クラス</th>
+					<th>学生番号</th>
+					<th>氏名</th>
+					<th>１回</th>
+					<th>２回</th>
 				</tr>
 	<c:forEach var="test" items="${test}">
 		<tr>
-			<td>${test.subject_name}</td>
-			<td>${test.subject_cd}</td>
-			<td>${test.no}</td>
+			<td>${test.ent_year}</td>
+			<td>${test.class_num}</td>
+			<td>${test.student_no}</td>
+			<td>${test.student_name}</td>
 			<td>${test.point1}</td>
-			<td>${test.make_up}</td>
-			<td>
-			<c:choose>
-				<c:when test="${test.point1>test.make_up}">
-				なし
-				</c:when>
-				<c:otherwise>
-				あり
-				</c:otherwise>
-			</c:choose>
+			<td>${test.point2}</td>
+
 	<td><a href="student_transfer.jsp?
 	no=${student.no}&ent_year=${student.ent_year}<%--&name=${student.name}--%>&class_num=${student.class_num}">
 	変更</a></td>
 
-	<td><a href= "student_delete.jsp?
-	no=${student.no}&ent_year=${student.ent_year}
-	<%--&name=${student.name}--%>&class_num=${student.class_num}">削除</a></td>
+	<td><a href= "test_delete.jsp?
+	student_no=${test.student_no}&class_num=${test.class_num}&subject_cd=${test.subject_cd}
+	&subject_name=${test.subject_name}&point1=${test.point1}&point2=${test.point2}
+	&class_num=${student.class_num}">削除</a></td>
 	</tr>
 	</c:forEach>
 	</table>
