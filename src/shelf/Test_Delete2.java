@@ -20,6 +20,8 @@ public class Test_Delete2 extends HttpServlet {
             String subject_cd=request.getParameter("subject_cd");
             String no=request.getParameter("no");
 
+            System.out.println(student_no);
+
             TestDAO dao=new TestDAO();
             int line=dao.student_delete(student_no, subject_cd, no);
 

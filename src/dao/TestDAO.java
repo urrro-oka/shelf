@@ -127,6 +127,7 @@ public class TestDAO extends DAO {
 			Test p = new Test();
 			p.setStudent_name(rs.getString("student.name"));
 			p.setSubject_name(rs.getString("subject.name"));
+			p.setStudent_no(rs.getString("student.no"));
 			p.setSubject_cd(rs.getString("subject.cd"));
 			p.setNo(rs.getInt("test.no"));
 			p.setPoint1(rs.getInt("point"));
