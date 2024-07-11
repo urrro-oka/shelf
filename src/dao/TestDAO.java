@@ -258,6 +258,34 @@ public class TestDAO extends DAO {
 		return line;
 	}
 
+	public int subject_delete(String student_no, String subject_cd) throws Exception {
+		Connection con=getConnection();
+		PreparedStatement st=con.prepareStatement(
+				"delete test where student_no = ? and subject_cd = ?");
+		st.setString(1, student_no);
+		st.setString(2, subject_cd);
+
+		int line=st.executeUpdate();
+
+		st.close();
+		con.close();
+		return line;
+		}
+
+
+	public int student_delete(String student_no, String student_name) throws Exception {
+		Connection con=getConnection();
+		PreparedStatement st=con.prepareStatement(
+				"delete test where student_no = ? and student_name = ?");
+		st.setString(1, student_no);
+		st.setString(2, student_name);
+
+		int line=st.executeUpdate();
+
+		st.close();
+		con.close();
+		return line;
+		}
 
 
 
