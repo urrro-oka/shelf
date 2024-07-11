@@ -15,11 +15,12 @@ ${param.scripts}
 		<section class= "me-4">
 		<div class = "all">
 		<div class="sidebar">
-			<br><a href="menu.jsp">メニュー</a><br><br>
-			<a href="student_list">学生管理</a><br><br>
-			<a href="test_list">成績管理</a><br><br>
+			<br><a href="menu.jsp">メニュー</a><br>
+			<a href="student_list">学生管理</a><br>
+			<a href="test_list">成績管理</a><br>
 			${param.side }
-			<a href="subject_list">科目管理</a><br><br>
+			<a href="subject_list">科目管理</a><br>
+			${param.side_sub }
 		</div>
 			<div class="body">
 ${param.content}

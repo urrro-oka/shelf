@@ -5,6 +5,7 @@ public class Subject implements java.io.Serializable{
 	private String school;
 	private String cd;
 	private String name;
+	private int passed_point;
 
 //	get
 	public String getSchool() {
@@ -18,6 +19,9 @@ public class Subject implements java.io.Serializable{
 	public String getName() {
 		return name;
 	}
+	public int getPassed_point() {
+		return passed_point;
+	}
 
 //	set
 	public void setSchool(String school){
@@ -30,6 +34,10 @@ public class Subject implements java.io.Serializable{
 
 	public void setName(String name){
 		this.name = name;
+	}
+
+	public void setPassed_point(int passed_point){
+		this.passed_point = passed_point;
 	}
 }
 

@@ -7,6 +7,9 @@ pageEncoding="UTF-8"%>
 			<title>得点管理システム</title>
 		<div id = "title">得点管理システム</div>
 	</c:param>
+
+	<c:param name="side">　　<a href="#">成績登録</a><br></c:param>
+
 	<c:param name="scripts"></c:param>
 	<c:param name="content">
 
@@ -69,7 +72,9 @@ pageEncoding="UTF-8"%>
 		</form>
 		<c:choose>
 			<c:when test="${test.size()>0}">
-				<div class = "fontsize1">検索科目:${test.get(0).subject_name}</div>
+				<div class = "fontsize3">検索科目:${test.get(0).subject_name}</div><br>
+				<div class = "fontsize3">１回目の平均点:${avg.get(0).avg_point1}</div>
+				<div class = "fontsize3">２回目の平均点:${avg.get(0).avg_point2}</div>
 				<table class="table table-hover">
 				<tr>
 					<th>入学年度</th>

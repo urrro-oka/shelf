@@ -11,9 +11,9 @@ pageEncoding="UTF-8"%>
 	<c:param name="content">
     <% String cd = request.getParameter("cd"); %>
     <% String name = request.getParameter("name"); %>
-		<h2 class="toptitle">科目情報変更</h2>
+		<h2 class="toptitle">合格ライン登録</h2>
 
-<form action="subject_update" method="get">
+<form action="subject_make_up" method="get">
 <table>
 	<tr>
 		<th>科目コード</th>
@@ -22,7 +22,11 @@ pageEncoding="UTF-8"%>
 
 	<tr>
 		<th>科目名:</th>
-		<td><input type="text" name="name" value="<%=name %>" maxlength="20" required /></td>
+		<td><input type="text" name="name" value="<%=name %>" readonly style="border: none;" /></td>
+	</tr>
+	<tr>
+		<th>合格ライン:</th>
+		<td><input type="number" name="passed_point"/></td>
 	</tr>
 </table>
 <input class="btn" type="submit" value="変更">

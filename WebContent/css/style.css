@@ -11,8 +11,31 @@
 	font-family: serif;
 }
 a{
+	display:inline-block;
+	color:black;
+	box-shadow: 2px 2px 2px #a59aca;
 	text-decoration: none;
-	border:1px;
+	background-color: #ffffff;
+    margin: 10px 10px 10px 10px;
+    border: 1px solid #bfbce0;
+    border-radius: 5px;
+    padding: 5px;
+}
+.fontsize3{
+	display:inline-block;
+	color:black;
+	box-shadow: 2px 2px 2px #c0c0c0;
+	text-decoration: none;
+	background-color: #ffffff;
+    margin: 10px 10px 10px 10px;
+    border: 1px solid #400080;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.menubox{
+	padding: 7% 10%;
+	font-size: 1.5em;
 }
 .fontsize1{
   font-size: 1.2em;
@@ -184,12 +207,17 @@ table tr{
 table th{
 	font-family: sans-serif;
   background-color: #ddD9FF;
+  position:sticky;
+  top:0;
 }
 
 table th,table td{
   text-align: center;
   width: 10%;
   padding: 15px 0;
+}
+table td{
+	aligin:left;
 }
 
 .btn{
