@@ -49,7 +49,7 @@
 			<input class="btnl" type="submit" value="削除する">
 
 			<p>
-				<a href="" onclick="history.back()">戻る</a>
+				<a href="#" onclick="history.back()">戻る</a>
 			</p>
 
 		</form>
