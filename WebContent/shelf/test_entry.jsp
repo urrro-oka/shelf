@@ -16,7 +16,7 @@
 <body>
 	<div id="title">得点管理システム</div>
 	<h2 class="toptitle">成績新規登録</h2>
-	<form action="test_insert" method="get">
+	<form action="Test_insert.action" method="get">
 		<table>
 
 			<tr>
@@ -67,7 +67,7 @@
 
 
 				<td><input type="submit" value="登録"></td>
-				<td><a href="" onclick="history.back()">戻る</a></td>
+				<td><a href="#" onclick="history.back()">戻る</a></td>
 			</tr>
 		</table>
 	</form>

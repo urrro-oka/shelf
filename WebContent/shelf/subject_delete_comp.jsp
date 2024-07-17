@@ -13,8 +13,8 @@ pageEncoding="UTF-8"%>
     <h2 class="toptitle">科目情報削除完了</h2>
     <p class="fontsize2">科目情報の削除が完了しました。</p>
 </body>
-<form action="subject_list">
-    <a href="" onclick="history.back()">戻る</a><br>
+<form action="Subject_list.action">
+    <a href="#" onclick="history.back()">戻る</a><br>
     <input class="btnl" type="submit" value="科目一覧">
 </form>
 </c:param>

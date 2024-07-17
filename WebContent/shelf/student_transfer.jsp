@@ -15,7 +15,7 @@ pageEncoding="UTF-8"%>
                 <% String class_num = request.getParameter("class_num");%>
     <h2 class="toptitle">学生情報変更</h2>
 
-<form action="student_update">
+<form action="Student_update.action">
 <table class="table2">
 
     <tr>

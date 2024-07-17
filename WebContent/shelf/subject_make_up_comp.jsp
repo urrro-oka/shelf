@@ -13,7 +13,7 @@ pageEncoding="UTF-8"%>
 
     <h2 class="toptitle">合格ライン登録完了</h2>
     <p>登録が完了しました</p>
-    <a href="subject_list" onclick="history.back()">科目一覧</a><br>
+    <a href="Subject_list.action" >科目一覧</a><br>
 
 
 </body>

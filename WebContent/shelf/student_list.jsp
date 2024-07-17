@@ -16,7 +16,7 @@ pageEncoding="UTF-8"%>
 			<div class="my-2 text-end px-4">
 				<a href="student_entry.jsp">新規登録</a>
 			</div>
-			<form action=student_search method="get">
+			<form action=Student_search.action method="get">
 				<div class= "row border mx-3 mb-3 py-2 align-items-center rounded " id="filter">
 					<div class="col-4 col4-1 line">
 						<label class="form-label" for="student-f1-select">入学年度</label>
@@ -90,7 +90,7 @@ pageEncoding="UTF-8"%>
 
 	<td><a href= "student_delete.jsp?
 	no=${student.no}&ent_year=${student.ent_year}
-	<%--&name=${student.name}--%>&class_num=${student.class_num}">削除</a></td>
+	&name=${student.name}&class_num=${student.class_num}">削除</a></td>
 	</tr>
 	</c:forEach>
 	</table>

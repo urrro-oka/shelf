@@ -9,7 +9,7 @@ pageEncoding="UTF-8"%>
 	</c:param>
 	<c:param name="scripts"></c:param>
 	<c:param name="content">
-<form action="subject_insert" method="get">
+<form action="Subject_insert.action" method="get">
     <h2 class="toptitle">科目情報登録</h2>
     <table>
     <tr>

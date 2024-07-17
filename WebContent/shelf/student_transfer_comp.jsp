@@ -9,7 +9,7 @@ pageEncoding="UTF-8"%>
 	</c:param>
 	<c:param name="scripts"></c:param>
 	<c:param name="content">
-<form action="student_list">
+<form action="Student_list.action">
     <h2 class="toptitle">学生情報変更</h2>
     <p>変更が完了しました</p>
     <input class="btn" type="submit" value="学生一覧">

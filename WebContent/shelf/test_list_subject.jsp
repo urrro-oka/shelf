@@ -17,7 +17,7 @@ pageEncoding="UTF-8"%>
 			<h2 class="h3 mb-3 fw-norma bg-secondary big-opacity-10 py-2 px-4">成績一覧(科目別)</h2>
 		</div>
 				<a href="#">成績登録</a>
-			<form action=test_search_subject method="get">
+			<form action="Test_search_subject.action" method="get">
 				<div class= "row border mx-3 mb-3 py-2 align-items-center rounded " id="filter">
 
 				<%--科目ごとに検索--%>
@@ -57,7 +57,7 @@ pageEncoding="UTF-8"%>
 
                 </div>
 		</form>
-		<form action=test_search_student method="get">
+		<form action="Test_search_student.action" method="get">
 
                 <div class= "row border mx-3 mb-3 py-2 align-items-center rounded " id="filter">
 					<div>学生情報</div>

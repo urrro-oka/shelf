@@ -9,7 +9,7 @@ pageEncoding="UTF-8"%>
 	</c:param>
 	<c:param name="scripts"></c:param>
 	<c:param name="content">
-<form action="test_list">
+<form action="Test_list.action">
     <h2 class="toptitle">成績削除</h2>
     <p>削除が完了しました</p>
     <input class="btn" type="submit" value = "成績参照">

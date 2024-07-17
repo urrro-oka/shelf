@@ -10,7 +10,7 @@ pageEncoding="UTF-8"%>
 	<c:param name="scripts"></c:param>
 	<c:param name="content">
     <h2 class="toptitle">学生情報登録</h2>
-    <form action="student_insert">
+    <form action="Student_insert.action">
     <p>
         <label>入学年度</label>
         <input name="ent_year" type="text" required>

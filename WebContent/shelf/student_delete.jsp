@@ -18,7 +18,7 @@ pageEncoding="UTF-8"%>
 
     <h2 class="toptitle">学生情報削除</h2>
     <p class="fontsize1">削除したい学生情報</p>
-<form action="student_delete">
+<form action="Student_delete.action">
 	<table>
 		<tr>
 		    <th>入学年度</th>
@@ -39,7 +39,7 @@ pageEncoding="UTF-8"%>
 <input class="btnl" type="submit" value="削除する">
 
 </form>
-<form action="student_list">
+<form action="Student_list.action">
     <input class="btnl" type="submit" value="学生一覧">
 </form>
     <a href="#" onclick="history.back()">戻る</a><br>

@@ -9,11 +9,11 @@ pageEncoding="UTF-8"%>
 	</c:param>
 	<c:param name="scripts"></c:param>
 	<c:param name="content">
-<form action="subject_list">
+<form action="Subject_list.action">
 
     <h2 class="toptitle">科目情報登録・完了</h2>
     <p>登録が完了しました</p>
-    <a href="" onclick="history.back()">戻る</a><br>
+    <a href="#" onclick="history.back()">戻る</a><br>
     <input class="btn" type="submit" value = "科目一覧">
 </form>
 </body>

@@ -9,7 +9,7 @@ pageEncoding="UTF-8"%>
 	</c:param>
 	<c:param name="scripts"></c:param>
 	<c:param name="content">
-<form action="test_list">
+<form action="Test_list.action">
     <h2 class="toptitle">登録が完了しました</h2>
     <a href="#" onclick="history.back()">戻る</a><br>
     <input class="btn" type="submit" value = "成績参照">

@@ -3,16 +3,15 @@ package shelf;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.SubjectDAO;
+import tool.Action;
 
-@WebServlet(urlPatterns={"/shelf/subject_delete"})
-public class Subject_delete extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+
+public class Subject_deleteAction extends Action {
+    public String execute(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         try {
@@ -21,12 +20,12 @@ public class Subject_delete extends HttpServlet {
             SubjectDAO dao=new SubjectDAO();
             int line=dao.delete(cd);
 
-            request.getRequestDispatcher("subject_delete_comp.jsp").forward(request, response);
+			return "subject_delete_comp.jsp";
 
         } catch (Exception e) {
             System.out.println("エラーshelf");
-            request.getRequestDispatcher("error.jsp").forward(request, response);
             e.printStackTrace();
+			return "error.jsp";
         }
     }
 }

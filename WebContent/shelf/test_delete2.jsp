@@ -22,7 +22,7 @@
 
 		<h2 class="toptitle">成績削除</h2>
 		<p class="fontsize1">「削除してもよろしいですか？」</p>
-		<form action="test_delete2" method="get">
+		<form action="Test_delete2.action">
 			<table>
 				<tr>
 					<th>学生名</th>

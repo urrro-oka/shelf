@@ -14,7 +14,7 @@ pageEncoding="UTF-8"%>
 
     <h2 class="toptitle">科目情報削除</h2>
     <p class="fontsize1">「<%=name %>を削除してもよろしいですか？」</p>
-<form action="subject_delete" method="get">
+<form action="Subject_delete.action" method="get">
 <table>
 		<tr>
 		    <th>科目コード</th>

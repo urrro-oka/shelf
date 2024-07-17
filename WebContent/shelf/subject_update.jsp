@@ -13,7 +13,7 @@ pageEncoding="UTF-8"%>
     <% String name = request.getParameter("name"); %>
 		<h2 class="toptitle">科目情報変更</h2>
 
-<form action="subject_update" method="get">
+<form action="Subject_update.action" method="get">
 <table>
 	<tr>
 		<th>科目コード</th>
@@ -27,7 +27,7 @@ pageEncoding="UTF-8"%>
 </table>
 <input class="btn" type="submit" value="変更">
 </form>
-<a href="subject_list">戻る</a>
+<a href="Subject_list.action">戻る</a>
 </body>
 </c:param>
 
