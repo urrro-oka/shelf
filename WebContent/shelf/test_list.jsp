@@ -88,9 +88,7 @@
 			                <td>${all.point1}</td>
 			                <td>${all.point2}</td>
 
-                            <td>
-                                <a href="student_transfer.jsp?no=${student.no}&ent_year=${student.ent_year}&class_num=${student.class_num}">変更</a>
-                            </td>
+
                             <td>
                                 <a href="test_delete.jsp?student_no=${all.student_no}&class_num=${all.class_num}&subject_name=${all.subject_name}
                                 &subject_cd=${all.subject_cd}&point1=${all.point1}&point2=${all.point2}">削除</a>

@@ -28,7 +28,7 @@ public class Test_entryAction extends Action {
 
 			StudentDAO classdao=new StudentDAO();
 			List<Student> classlist=classdao.Class_num();
-			request.setAttribute("class", classlist);
+			request.setAttribute("class_num", classlist);
 
 			SubjectDAO sbdao=new SubjectDAO();
 			List<Subject> subjectlist=sbdao.SubjectAll();

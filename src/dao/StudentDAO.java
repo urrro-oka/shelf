@@ -209,7 +209,7 @@ public class StudentDAO extends DAO {
 		Connection con = getConnection();
 
 		PreparedStatement st = con.prepareStatement(
-				"select DISTINCT Class_num from class_num ORDER BY Class_num");
+				"select DISTINCT Class_num from class_num");
 		ResultSet rs = st.executeQuery();
 
 

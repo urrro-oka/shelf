@@ -72,6 +72,7 @@ pageEncoding="UTF-8"%>
 		</form>
 		<c:choose>
 			<c:when test="${test.size()>0}">
+				<div class = "fontsize3">入学年度:${test.get(0).ent_year}</div>
 				<div class = "fontsize3">検索科目:${test.get(0).subject_name}</div><br>
 				<div class = "fontsize3">１回目の平均点:${avg.get(0).avg_point1}</div>
 				<div class = "fontsize3">２回目の平均点:${avg.get(0).avg_point2}</div>
@@ -92,10 +93,6 @@ pageEncoding="UTF-8"%>
 			<td>${test.student_name}</td>
 			<td>${test.point1}</td>
 			<td>${test.point2}</td>
-
-	<td><a href="student_transfer.jsp?
-	no=${student.no}&ent_year=${student.ent_year}<%--&name=${student.name}--%>&class_num=${student.class_num}">
-	変更</a></td>
 
 	<td><a href= "test_delete.jsp?
 	student_no=${test.student_no}&class_num=${test.class_num}&subject_cd=${test.subject_cd}&subject_name=${test.subject_name}

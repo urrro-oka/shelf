@@ -53,7 +53,7 @@ public class Test_search_subjectAction extends Action {
 
 			TestDAO dao=new TestDAO();
 			List<Test> list=dao.Test_search_subject(ent_year,p);
-			List<Test> list_AVG=dao.Test_Avg(subject);
+			List<Test> list_AVG=dao.Test_Avg(subject,ent_year);
 
 			System.out.println(list);
 			request.setAttribute("test", list);
