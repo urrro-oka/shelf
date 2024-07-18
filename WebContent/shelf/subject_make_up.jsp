@@ -21,11 +21,11 @@ pageEncoding="UTF-8"%>
 	</tr>
 
 	<tr>
-		<th>科目名:</th>
+		<th>科目名</th>
 		<td><input type="text" name="name" value="<%=name %>" readonly style="border: none;" /></td>
 	</tr>
 	<tr>
-		<th>合格ライン:</th>
+		<th>合格ライン</th>
 		<td><input type="number" name="passed_point"/></td>
 	</tr>
 </table>

@@ -8,6 +8,7 @@
 		<div id="title">得点管理システム</div>
 	</c:param>
 	<c:param name="scripts"></c:param>
+		<c:param name="side">　　<a href="Test_entry.action">成績登録</a><br></c:param>
 	<c:param name="content">
 
 		<% String student_no = request.getParameter("student_no"); %>

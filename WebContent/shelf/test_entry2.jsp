@@ -8,6 +8,8 @@
 		<div id="title">得点管理システム</div>
 	</c:param>
 	<c:param name="scripts"></c:param>
+
+		<c:param name="side">　　<a href="Test_entry.action">成績登録</a><br></c:param>
 	<c:param name="content">
 
 	<h2 class="toptitle">成績新規登録</h2>
@@ -19,17 +21,17 @@
 
 
 				<a><font color="red">すでに受験済みです！</font></a>
-				<td><select name="student_no">
+				<td><select name="student_no" >
 						<option value="">-------</option>
 						<c:forEach var="student" items="${student}">
-							<option value="${student.no}">${student.no}</option>
+							<option value="${student.no}">${student.no}：${student.name}</option>
 						</c:forEach>
 				</select></td>
 			</tr>
 			<tr>
 				<th>クラス</th>
 
-				<td><select name="class_num">
+				<td><select name="class_num" required>
 						<option value="">-------</option>
 						<c:forEach var="student" items="${class_num}">
 							<option value="${student.class_num}">${student.class_num}</option>
@@ -39,7 +41,7 @@
 			<tr>
 				<th>科目</th>
 
-				<td><select name="subject_cd">
+				<td><select name="subject_cd" required>
 						<option value="">-------</option>
 						<c:forEach var="subject" items="${subject}">
 							<option value="${subject.cd}">${subject.name}</option>
@@ -49,7 +51,7 @@
 			<tr>
 				<th>回数</th>
 
-				<td><select name="no">
+				<td><select name="no" required>
 						<option value="1">1</option>
 						<option value="2">2</option>
 				</select></td>

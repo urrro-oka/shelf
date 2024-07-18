@@ -32,6 +32,18 @@ public class Test_insertAction extends Action {
 			List<Test> list=dao.Test_Prymary(no, student_no, subject_cd);
 			List<Test> list2=dao.Test_Prymary2(student_no, subject_cd);
 
+			StudentDAO stdao=new StudentDAO();
+			List<Student> stlist=stdao.StudentAll();
+			request.setAttribute("student", stlist);
+
+			StudentDAO classdao=new StudentDAO();
+			List<Student> classlist=classdao.Class_num();
+			request.setAttribute("class_num", classlist);
+
+			SubjectDAO sbdao=new SubjectDAO();
+			List<Subject> subjectlist=sbdao.SubjectAll();
+			request.setAttribute("subject", subjectlist);
+
 			if(list2.size() != 1 && no == 2){
 				return "test_entry3.jsp";
 			}
@@ -47,18 +59,6 @@ public class Test_insertAction extends Action {
 				return "test_entry_comp.jsp";
 			}
 			else{
-
-				StudentDAO stdao=new StudentDAO();
-				List<Student> stlist=stdao.StudentAll();
-				request.setAttribute("student", stlist);
-
-				StudentDAO classdao=new StudentDAO();
-				List<Student> classlist=classdao.Class_num();
-				request.setAttribute("class_num", classlist);
-
-				SubjectDAO sbdao=new SubjectDAO();
-				List<Subject> subjectlist=sbdao.SubjectAll();
-				request.setAttribute("subject", subjectlist);
 
 				return "test_entry2.jsp";
 			}

@@ -8,6 +8,8 @@ pageEncoding="UTF-8"%>
 		<div id = "title">得点管理システム</div>
 	</c:param>
 	<c:param name="scripts"></c:param>
+
+		<c:param name="side">　　<a href="Test_entry.action">成績登録</a><br></c:param>
 	<c:param name="content">
 <form action="Test_list.action">
     <h2 class="toptitle">登録が完了しました</h2>

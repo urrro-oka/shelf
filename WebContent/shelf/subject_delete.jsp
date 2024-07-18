@@ -8,6 +8,7 @@ pageEncoding="UTF-8"%>
 		<div id = "title">得点管理システム</div>
 	</c:param>
 	<c:param name="scripts"></c:param>
+		<c:param name="side_sub">　　<a href="subject_entry.jsp">科目登録</a><br></c:param>
 	<c:param name="content">
     <% String cd = request.getParameter("cd"); %>
     <% String name = request.getParameter("name"); %>
