@@ -25,7 +25,14 @@ ${param.scripts}
 			<div class="body">
 ${param.content}
 </div>
+		<div class="footer02">
+    <p>大原学園</p>
+  <p class="copyright">
+    &copy; 2024 TIC
+    </p>
+    </div>
 	</div>
 	</section>
 </body>
+
 </html>

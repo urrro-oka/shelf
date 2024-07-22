@@ -65,7 +65,7 @@
 			<tr>
 
 
-				<td><input type="submit" value="登録"></td>
+				<td><input type="submit" class = "btn" value="登録"></td>
 				<td><a href="#" onclick="history.back()">戻る</a></td>
 			</tr>
 		</table>
