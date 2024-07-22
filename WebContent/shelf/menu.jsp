@@ -6,8 +6,7 @@ pageEncoding="UTF-8"%>
 	<c:param name="title">
 			<title>得点管理システム</title>
 		<div id = "title">得点管理システム</div>
-		<a href = "#">様</a>
-		<a href = "#">ログアウト</a>
+
 	</c:param>
 	<c:param name="scripts"></c:param>
 	<c:param name="content">
