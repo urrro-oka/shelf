@@ -14,8 +14,10 @@ pageEncoding="UTF-8"%>
 	<c:param name="content">
     <h2 class="toptitle">科目管理</h2>
     <a class="linkhover" href="subject_entry.jsp">新規登録</a>
+
+    <c:choose>
+    <c:when test="${subject.size() > 0}">
     <table>
-        <thead>
             <tr>
                 <th>科目コード</th>
                 <th>科目名</th>
@@ -23,10 +25,6 @@ pageEncoding="UTF-8"%>
                 <th></th>
                 <th></th>
             </tr>
-        </thead>
-        <tbody>
-        <c:choose>
-            <c:when test="${test.size() > 0}">
         	<c:forEach var="subject" items="${subject}">
             <tr>
                 <td>${subject.cd}</td>
@@ -38,14 +36,15 @@ pageEncoding="UTF-8"%>
                 <td><a class="linkhover" href="subject_update.jsp?cd=${subject.cd}&name=${subject.name}">変更</a>・
                <a class="linkhover" href="subject_delete.jsp?cd=${subject.cd}&name=${subject.name}">削除</a></td>
             </tr>
+
             </c:forEach>
+      </table>
             </c:when>
             <c:otherwise>
                 <h1>科目データが存在しませんでした</h1>
             </c:otherwise>
            </c:choose>
-        </tbody>
-    </table>
+
 </body>
 </c:param>
 </c:import>
