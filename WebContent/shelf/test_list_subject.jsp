@@ -102,7 +102,7 @@ pageEncoding="UTF-8"%>
 	</table>
 	</c:when>
 	<c:otherwise>
-		<div>成績情報が存在しませんでした</div>
+		<h1>成績情報が存在しませんでした</h1>
 
 
 	</c:otherwise>

@@ -15,7 +15,7 @@
 	<c:param name="content">
 
 		<div class="toptitle">
-			<h2 class="h3 mb-3 fw-norma bg-secondary big-opacity-10 py-2 px-4">成績一覧(科目別)</h2>
+			<h2 class="h3 mb-3 fw-norma bg-secondary big-opacity-10 py-2 px-4">成績一覧(学生別)</h2>
 		</div>
 		<form action="Test_search_subject.action" method="get">
 			<div class="row border mx-3 mb-3 py-2 align-items-center rounded "
@@ -112,7 +112,7 @@
 </table>
 </c:when>
 <c:otherwise>
-<div>成績情報が存在しませんでした</div>
+<h1>成績情報が存在しませんでした</h1>
 
 
 	</c:otherwise>

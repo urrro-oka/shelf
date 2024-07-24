@@ -34,8 +34,19 @@ a{
 }
 
 .menubox{
-	padding: 7% 10%;
-	font-size: 1.5em;
+	display:inline-block;
+	padding: 7% 11%;
+	font-size: 1.7em;
+
+}
+.menubox1{
+	display:inline-block;
+	padding: 7% 7%;
+	font-size: 1.7em;
+
+}
+.iti{
+	text-align:center;
 }
 .fontsize1{
   font-size: 1.2em;
@@ -61,10 +72,6 @@ a{
 
   }
 footer {
-   position: absolute;/* ←絶対位置 */
-    bottom: 0;
-	height: 15%;
-	width: 100%;
 	text-align: center;
 	background: #eee;
 

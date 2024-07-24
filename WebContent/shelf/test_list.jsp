@@ -100,7 +100,7 @@
                 </table>
             </c:when>
             <c:otherwise>
-                <div class="fontsize1">成績データはは存在しません</div>
+                <h1>成績データが存在しませんでした</h1>
             </c:otherwise>
         </c:choose>
     </c:param>
