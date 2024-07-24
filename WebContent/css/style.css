@@ -4,6 +4,17 @@
 	font-family: serif;
 	background-color:#eee;
 }
+.toptitle1 {
+	display:inline-block;
+	text-align: center;
+	margin:1% 10%;
+	color: #a59aca;
+	font-family: serif;
+	background-color:#eee;
+	border-radius: 10px;
+	width: 80%;
+
+}
 #title{
 	font-size: 35px;
 	color: white;
@@ -20,6 +31,10 @@ a{
     border: 1px solid #bfbce0;
     border-radius: 5px;
     padding: 5px;
+	font-family: serif;
+}
+.branchside{
+	    border-radius: 50px;
 }
 .fontsize3{
 	display:inline-block;
@@ -35,15 +50,27 @@ a{
 
 .menubox{
 	display:inline-block;
-	padding: 7% 11%;
+	padding: 7% 17%;
 	font-size: 1.7em;
+
+	font-family: serif;
 
 }
 .menubox1{
 	display:inline-block;
-	padding: 7% 7%;
+	padding: 7% 13%;
 	font-size: 1.7em;
 
+	font-family: serif;
+
+}
+.menubox:hover,
+.menubox1:hover,
+.linkhover:hover{
+	transition: all .2s linear;
+	box-shadow: 2px 2px 2px #ccc;
+	text-decoration: none;
+	background-color: #cac8e8;
 }
 .iti{
 	text-align:center;

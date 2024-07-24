@@ -10,7 +10,7 @@
 	</c:param>
 	<c:param name="scripts"></c:param>
 
-		<c:param name="side">　　<a href="Test_entry.action">成績登録</a><br></c:param>
+		<c:param name="side">　　<a class="linkhover branchside" href="Test_entry.action">成績登録</a><br></c:param>
 	<c:param name="content">
 
 		<% String student_no = request.getParameter("student_no"); %>
@@ -60,8 +60,8 @@
 			<input type="hidden" name="subject_name" value="<%=subject_name%>">
 			<input type="hidden" name="class_num" value="<%=class_num%>">
 
-				<td><input type="submit" value="変更"></td>
-				<td><a href="#" onclick="history.back()">戻る</a></td>
+				<td><input type="submit" class ="btn" value="変更"></td>
+				<td><a class="linkhover" href="#" onclick="history.back()">戻る</a></td>
 			</tr>
 		</table>
 	</form>

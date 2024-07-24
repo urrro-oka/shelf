@@ -9,7 +9,7 @@ pageEncoding="UTF-8"%>
 	</c:param>
 	<c:param name="scripts"></c:param>
 
-		<c:param name="side_sub">　　<a href="subject_entry.jsp">科目登録</a><br></c:param>
+		<c:param name="side_sub">　　<a class="linkhover branchside" href="subject_entry.jsp">科目登録</a><br></c:param>
 	<c:param name="content">
     <% String cd = request.getParameter("cd"); %>
     <% String name = request.getParameter("name"); %>
@@ -29,7 +29,7 @@ pageEncoding="UTF-8"%>
 </table>
 <input class="btn" type="submit" value="変更">
 </form>
-<a href="Subject_list.action">戻る</a>
+<a class="linkhover" href="Subject_list.action">戻る</a>
 </body>
 </c:param>
 

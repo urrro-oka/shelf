@@ -59,7 +59,7 @@ pageEncoding="UTF-8"%>
     </p>
 </form>
     <p>
-    <a href="#" onclick="history.back()">戻る</a><br>
+    <a class="linkhover" href="#" onclick="history.back()">戻る</a><br>
     </p>
 
 </c:param>

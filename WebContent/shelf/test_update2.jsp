@@ -10,7 +10,7 @@
 	</c:param>
 	<c:param name="scripts"></c:param>
 
-		<c:param name="side">　　<a href="Test_entry.action">成績登録</a><br></c:param>
+		<c:param name="side">　　<a class="linkhover branchside" href="Test_entry.action">成績登録</a><br></c:param>
 	<c:param name="content">
 
 	<h2 class="toptitle">成績変更</h2>
@@ -55,8 +55,8 @@
 			<input type="hidden" name="subject_name" value="${student.subject_name}">
 			<input type="hidden" name="class_num" value="${student.class_num}">
 
-				<td><input type="submit" value="変更"></td>
-				<td><a href="#" onclick="history.back()">戻る</a></td>
+				<td><input type="submit" class ="btn" value="変更"></td>
+				<td><a class="linkhover" href="#" onclick="history.back()">戻る</a></td>
 			</tr>
 		</table>
 	</form>

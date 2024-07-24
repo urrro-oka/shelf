@@ -8,13 +8,13 @@ pageEncoding="UTF-8"%>
 		<div id = "title">得点管理システム</div>
 	</c:param>
 	<c:param name="scripts"></c:param>
-		<c:param name="side_sub">　　<a href="subject_entry.jsp">科目登録</a><br></c:param>
+		<c:param name="side_sub">　　<a class="linkhover branchside" href="subject_entry.jsp">科目登録</a><br></c:param>
 	<c:param name="content">
 
 
     <h2 class="toptitle">科目情報・変更完了</h2>
     <p>登録が完了しました</p>
-    <a href="Subject_list.action">科目一覧</a><br>
+    <a class="linkhover" href="Subject_list.action">科目一覧</a><br>
 
 
 </body>

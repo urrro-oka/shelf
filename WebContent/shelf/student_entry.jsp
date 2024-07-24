@@ -33,7 +33,7 @@ pageEncoding="UTF-8"%>
 	<tr>
     <td><input class="btn" type="submit" value="登録"></td>
 
-        <td><a href="#" onclick="history.back()">戻る</a></td>
+        <td><a class="linkhover" href="#" onclick="history.back()">戻る</a></td>
 	</tr>
     </table>
 </form>

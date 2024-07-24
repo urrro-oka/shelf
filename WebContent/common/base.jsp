@@ -17,13 +17,13 @@ ${param.scripts}
 		<div class="sidebar">
 	<div class="login">
 		<a>様</a>
-		<a href = "#">ログアウト</a>
+		<a href = "#" class="linkhover">ログアウト</a>
 	</div>
-			<br><a href="menu.jsp">メニュー</a><br>
-			<a href="Student_list.action">学生管理</a><br>
-			<a href="Test_list.action">成績管理</a><br>
+			<br><a href="menu.jsp" class="linkhover">メニュー</a><br>
+			<a href="Student_list.action" class="linkhover">学生管理</a><br>
+			<a href="Test_list.action" class="linkhover">成績管理</a><br>
 			${param.side }
-			<a href="Subject_list.action">科目管理</a><br>
+			<a href="Subject_list.action" class="linkhover">科目管理</a><br>
 			${param.side_sub }
 		</div>
 			<div class="body">

@@ -12,7 +12,7 @@ pageEncoding="UTF-8"%>
 <form action="Student_list.action">
     <h2 class="toptitle">学生情報登録</h2>
     <p>登録が完了しました</p>
-    <a href="#" onclick="history.back()">戻る</a><br>
+    <a class="linkhover" href="#" onclick="history.back()">戻る</a><br>
     <input class="btn" type="submit" value = "学生一覧">
 </form>
 

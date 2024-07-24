@@ -11,7 +11,7 @@
 	</c:param>
 	<c:param name="scripts"></c:param>
 
-		<c:param name="side">　　<a href="Test_entry.action">成績登録</a><br></c:param>
+		<c:param name="side">　　<a class="linkhover branchside" href="Test_entry.action">成績登録</a><br></c:param>
 	<c:param name="content">
 
 		<% String student_no = request.getParameter("student_no"); %>
@@ -51,7 +51,7 @@
 			<input class="btnl" type="submit" value="削除する">
 
 			<p>
-				<a href="#" onclick="history.back()">戻る</a>
+				<a class="linkhover" href="#" onclick="history.back()">戻る</a>
 			</p>
 
 		</form>

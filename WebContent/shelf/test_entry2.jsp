@@ -9,7 +9,7 @@
 	</c:param>
 	<c:param name="scripts"></c:param>
 
-		<c:param name="side">　　<a href="Test_entry.action">成績登録</a><br></c:param>
+		<c:param name="side">　　<a class="linkhover branchside" href="Test_entry.action">成績登録</a><br></c:param>
 	<c:param name="content">
 
 	<h2 class="toptitle">成績新規登録</h2>
@@ -66,7 +66,7 @@
 
 
 				<td><input type="submit" class = "btn" value="登録"></td>
-				<td><a href="#" onclick="history.back()">戻る</a></td>
+				<td><a class="linkhover" href="#" onclick="history.back()">戻る</a></td>
 			</tr>
 		</table>
 	</form>

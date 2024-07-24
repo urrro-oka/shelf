@@ -42,7 +42,7 @@ pageEncoding="UTF-8"%>
 <form action="Student_list.action">
     <input class="btnl" type="submit" value="学生一覧">
 </form>
-    <a href="#" onclick="history.back()">戻る</a><br>
+    <a class="linkhover" href="#" onclick="history.back()">戻る</a><br>
 
 </c:param>
 </c:import>

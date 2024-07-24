@@ -8,7 +8,7 @@ pageEncoding="UTF-8"%>
 		<div id = "title">得点管理システム</div>
 	</c:param>
 	<c:param name="scripts"></c:param>
-		<c:param name="side_sub">　　<a href="subject_entry.jsp">科目登録</a><br></c:param>
+		<c:param name="side_sub">　　<a class="linkhover branchside" href="subject_entry.jsp">科目登録</a><br></c:param>
 	<c:param name="content">
 <form action="Subject_insert.action" method="get">
     <h2 class="toptitle">科目情報登録</h2>
@@ -26,7 +26,7 @@ pageEncoding="UTF-8"%>
 
     <input class="btn" type="submit" value="登録">
     <p>
-    <a href="#" onclick="history.back()">戻る</a>
+    <a class="linkhover" href="#" onclick="history.back()">戻る</a>
     </p>
 </form>
 </body>
