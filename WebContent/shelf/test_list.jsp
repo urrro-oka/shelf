@@ -90,7 +90,9 @@
 
 
                             <td>
-                                <a href="test_delete.jsp?student_no=${all.student_no}&class_num=${all.class_num}&subject_name=${all.subject_name}
+                            	<a href="test_update.jsp?student_name=${all.student_name}&student_no=${all.student_no}&class_num=${all.class_num}&subject_name=${all.subject_name}
+                                &subject_cd=${all.subject_cd}">変更</a></td>
+                            <td><a href="test_delete.jsp?student_name=${all.student_name}&student_no=${all.student_no}&class_num=${all.class_num}&subject_name=${all.subject_name}
                                 &subject_cd=${all.subject_cd}&point1=${all.point1}&point2=${all.point2}">削除</a>
                             </td>
                         </tr>

@@ -61,9 +61,8 @@ a{
 
   }
 footer {
-	position: fixed;
-	left: 0;
-	bottom: 0;
+   position: absolute;/* ←絶対位置 */
+    bottom: 0;
 	height: 15%;
 	width: 100%;
 	text-align: center;

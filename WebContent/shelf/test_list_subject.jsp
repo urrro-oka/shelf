@@ -92,6 +92,8 @@ pageEncoding="UTF-8"%>
 			<td>${test.point1}</td>
 			<td>${test.point2}</td>
 
+	<td><a href="test_update.jsp?student_name=${test.student_name}&student_no=${test.student_no}&class_num=${test.class_num}&subject_name=${test.subject_name}
+                                &subject_cd=${test.subject_cd}&point1=${test.point1}&point2=${test.point2}">変更</a></td>
 	<td><a href= "test_delete.jsp?
 	student_no=${test.student_no}&class_num=${test.class_num}&subject_cd=${test.subject_cd}&subject_name=${test.subject_name}
 	&no=${test.no}&point1=${test.point1}&point2=${test.point2}">削除</a></td>

@@ -102,7 +102,8 @@
 				あり
 </c:otherwise>
 </c:choose>
-
+<td><a href="test_update.jsp?student_name=${test.student_name}&student_no=${test.student_no}&class_num=${test.class_num}&subject_name=${test.subject_name}
+                                &subject_cd=${test.subject_cd}&point1=${test.point1}&point2=${test.point2}">変更</a></td>
 	<td><a href= "test_delete2.jsp?
 	student_name=${test.student_name}&subject_cd=${test.subject_cd}&subject_name=${test.subject_name}
 	&no=${test.no}&point1=${test.point1}&point2=${test.point2}&student_no=${test.student_no}">削除</a></td>

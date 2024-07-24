@@ -13,39 +13,30 @@
 		<c:param name="side">　　<a href="Test_entry.action">成績登録</a><br></c:param>
 	<c:param name="content">
 
-	<h2 class="toptitle">成績新規登録</h2>
-	<form action="Test_insert.action" method="get">
+		<% String student_no = request.getParameter("student_no"); %>
+		<% String student_name = request.getParameter("student_name"); %>
+		<% String class_num = request.getParameter("class_num"); %>
+		<% String subject_cd = request.getParameter("subject_cd"); %>
+		<% String subject_name = request.getParameter("subject_name"); %>
+
+	<h2 class="toptitle">成績変更</h2>
+	<form action="Test_update.action" method="get">
 		<table>
 
 			<tr>
-				<th>学生番号</th>
+				<th>学生名</th>
 
-				<td><select name="student_no" >
-						<option value="">-------</option>
-						<c:forEach var="student" items="${student}">
-							<option value="${student.no}">${student.no}：${student.name}</option>
-						</c:forEach>
-				</select></td>
+				<td><%=student_name %></td>
 			</tr>
 			<tr>
 				<th>クラス</th>
 
-				<td><select name="class_num" required>
-						<option value="">-------</option>
-						<c:forEach var="student" items="${class_num}">
-							<option value="${student.class_num}">${student.class_num}</option>
-						</c:forEach>
-				</select></td>
+				<td><%=class_num %></td>
 			</tr>
 			<tr>
-				<th>科目</th>
+				<th>科目名</th>
 
-				<td><select name="subject_cd" required>
-						<option value="">-------</option>
-						<c:forEach var="subject" items="${subject}">
-							<option value="${subject.cd}">${subject.name}</option>
-						</c:forEach>
-				</select></td>
+				<td><%=subject_name %></td>
 			</tr>
 			<tr>
 				<th>回数</th>
@@ -63,8 +54,13 @@
 			</tr>
 			<tr>
 
+			<input type="hidden" name="student_no" value="<%=student_no %>">
+			<input type="hidden" name="subject_cd" value="<%=subject_cd %>">
+			<input type="hidden" name="student_name" value="<%=student_name%>">
+			<input type="hidden" name="subject_name" value="<%=subject_name%>">
+			<input type="hidden" name="class_num" value="<%=class_num%>">
 
-				<td><input type="submit" value="登録"></td>
+				<td><input type="submit" value="変更"></td>
 				<td><a href="#" onclick="history.back()">戻る</a></td>
 			</tr>
 		</table>

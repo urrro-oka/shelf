@@ -25,7 +25,7 @@ public class TestDAO extends DAO {
 				"SELECT subject.name,subject.cd,student.ent_year,test.class_num,Student_no,student.name,point, "
 				+ "COALESCE(cast(("
 				+ "select point from test where no='2' "
-				+ "AND STUDENT_NO=STUDENT.no) AS VARCHAR),'-') AS point2 "
+				+ "AND STUDENT_NO=STUDENT.no AND test.subject_cd=subject.cd) AS VARCHAR),'-') AS point2 "
 				+ "FROM test "
 				+ "join student "
 				+ "on student.no=test.Student_no "
@@ -112,7 +112,7 @@ public class TestDAO extends DAO {
 		Connection con = getConnection();
 
 		PreparedStatement st = con.prepareStatement(
-				"select student.no,student.name ,subject.name,subject.cd,test.no,point, "
+				"select student.no,student.name ,subject.name,test.class_num,subject.cd,test.no,point, "
 				+ "subject.make_up "
 				+ "from test "
 				+ "join subject "
@@ -130,6 +130,7 @@ public class TestDAO extends DAO {
 			Test p = new Test();
 			p.setStudent_name(rs.getString("student.name"));
 			p.setSubject_name(rs.getString("subject.name"));
+			p.setClass_num(rs.getString("test.class_num"));
 			p.setStudent_no(rs.getString("student.no"));
 			p.setSubject_cd(rs.getString("subject.cd"));
 			p.setNo(rs.getInt("test.no"));
@@ -291,20 +292,6 @@ public class TestDAO extends DAO {
 		return line;
 	}
 
-	public int subject_delete(String student_no, String subject_cd) throws Exception {
-		Connection con=getConnection();
-		PreparedStatement st=con.prepareStatement(
-				"delete test where student_no = ? and subject_cd = ?");
-		st.setString(1, student_no);
-		st.setString(2, subject_cd);
-
-		int line=st.executeUpdate();
-
-		st.close();
-		con.close();
-		return line;
-		}
-
 
 	public int student_delete(String student_no, String subject_cd, String no) throws Exception {
 		Connection con=getConnection();
@@ -321,6 +308,26 @@ public class TestDAO extends DAO {
 		return line;
 		}
 
+	public int Test_Update(String student_no,String subject_cd,String no ,String point) throws Exception {
+		Connection con=getConnection();
+		PreparedStatement st=con.prepareStatement(
+				"UPDATE test SET point=? "
+				+ "WHERE SUBJECT_CD = ? "
+				+ "AND student_no=? "
+				+ "AND NO=?;");
+		st.setString(1, point);
+		st.setString(2, subject_cd);
+		st.setString(3, student_no);
+		st.setString(4, no);
+
+		int line=st.executeUpdate();
+
+
+		st.close();
+		con.close();
+		return line;
+
+	}
 
 
 	}

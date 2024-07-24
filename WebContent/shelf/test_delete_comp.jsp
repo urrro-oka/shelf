@@ -13,11 +13,9 @@ pageEncoding="UTF-8"%>
 <form action="Test_list.action">
     <h2 class="toptitle">成績削除</h2>
     <p>削除が完了しました</p>
-    <input class="btn" type="submit" value = "成績参照">
-    <a href="#" onclick="history.back()">戻る</a><br>
+    <input class="btn" type="submit" value = "成績参照"><br>
+    <a href="#" onclick="history.back()">戻る</a>
 </form>
 
 </c:param>
 </c:import>
-<%---base.jsp使えてない ---%>
-<%---イベント分からない ---%>

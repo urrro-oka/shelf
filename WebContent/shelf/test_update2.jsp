@@ -13,39 +13,25 @@
 		<c:param name="side">　　<a href="Test_entry.action">成績登録</a><br></c:param>
 	<c:param name="content">
 
-	<h2 class="toptitle">成績新規登録</h2>
-	<form action="Test_insert.action" method="get">
+	<h2 class="toptitle">成績変更</h2>
+		<a><font color="red">２回目が登録されていません！</font></a>
+	<form action="Test_update.action" method="get">
 		<table>
 
 			<tr>
-				<th>学生番号</th>
+				<th>学生名</th>
 
-				<td><select name="student_no" >
-						<option value="">-------</option>
-						<c:forEach var="student" items="${student}">
-							<option value="${student.no}">${student.no}：${student.name}</option>
-						</c:forEach>
-				</select></td>
+				<td>${student.student_name}</td>
 			</tr>
 			<tr>
 				<th>クラス</th>
 
-				<td><select name="class_num" required>
-						<option value="">-------</option>
-						<c:forEach var="student" items="${class_num}">
-							<option value="${student.class_num}">${student.class_num}</option>
-						</c:forEach>
-				</select></td>
+				<td>${student.class_num}</td>
 			</tr>
 			<tr>
-				<th>科目</th>
+				<th>科目名</th>
 
-				<td><select name="subject_cd" required>
-						<option value="">-------</option>
-						<c:forEach var="subject" items="${subject}">
-							<option value="${subject.cd}">${subject.name}</option>
-						</c:forEach>
-				</select></td>
+				<td>${student.subject_cd}</td>
 			</tr>
 			<tr>
 				<th>回数</th>
@@ -63,8 +49,13 @@
 			</tr>
 			<tr>
 
+			<input type="hidden" name="student_no" value="${student.student_no}">
+			<input type="hidden" name="subject_cd" value="${student.subject_cd}">
+			<input type="hidden" name="student_name" value="${student.student_name}">
+			<input type="hidden" name="subject_name" value="${student.subject_name}">
+			<input type="hidden" name="class_num" value="${student.class_num}">
 
-				<td><input type="submit" value="登録"></td>
+				<td><input type="submit" value="変更"></td>
 				<td><a href="#" onclick="history.back()">戻る</a></td>
 			</tr>
 		</table>
