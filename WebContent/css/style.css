@@ -16,10 +16,18 @@
 
 }
 #title{
+	display:inline-block;
 	font-size: 35px;
+	width:70%;
 	color: white;
   	background: linear-gradient(90deg, #a59aca, #fff);
 	font-family: serif;
+}
+.login{
+	text-align: right;
+	display:inline-block;
+	position:absolute;
+  	right:0;
 }
 a{
 	display:inline-block;
@@ -100,7 +108,7 @@ a{
   }
 footer {
 	text-align: center;
-	background: #eee;
+	background:linear-gradient(#eee, #fff);
 
 }
 
@@ -305,7 +313,4 @@ table td{
 	left:25%;
 
 }
-.login{
-	text-align: left;
-	display:block;
-}
+

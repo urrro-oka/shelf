@@ -11,14 +11,14 @@
 <body>
 
 ${param.title}
+	<div class="login">
+		<a>パブロ・ディエゴ・ホセ・フランシスコ・ザビエル様</a>
+		<a href = "#" class="linkhover">ログアウト</a>
+	</div>
 ${param.scripts}
 		<section class= "me-4">
 		<div class = "all">
 		<div class="sidebar">
-	<div class="login">
-		<a>様</a>
-		<a href = "#" class="linkhover">ログアウト</a>
-	</div>
 			<br><a href="menu.jsp" class="linkhover">メニュー</a><br>
 			<a href="Student_list.action" class="linkhover">学生管理</a><br>
 			<a href="Test_list.action" class="linkhover">成績管理</a><br>
