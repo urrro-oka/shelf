@@ -8,16 +8,14 @@ pageEncoding="UTF-8"%>
 		<div id = "title">得点管理システム</div>
 	</c:param>
 
-	<c:param name="side">　　<a href="#">成績登録</a><br></c:param>
-
+	<c:param name="side">　　<a class="linkhover branchside" href="Test_entry.action">成績登録</a><br></c:param>
 	<c:param name="scripts"></c:param>
 	<c:param name="content">
 
 		<div class="toptitle">
 			<h2 class="h3 mb-3 fw-norma bg-secondary big-opacity-10 py-2 px-4">成績一覧(科目別)</h2>
 		</div>
-				<a href="#">成績登録</a>
-			<form action=test_search_subject method="get">
+			<form action="Test_search_subject.action" method="get">
 				<div class= "row border mx-3 mb-3 py-2 align-items-center rounded " id="filter">
 
 				<%--科目ごとに検索--%>
@@ -57,7 +55,7 @@ pageEncoding="UTF-8"%>
 
                 </div>
 		</form>
-		<form action=test_search_student method="get">
+		<form action="Test_search_student.action" method="get">
 
                 <div class= "row border mx-3 mb-3 py-2 align-items-center rounded " id="filter">
 					<div>学生情報</div>
@@ -72,6 +70,7 @@ pageEncoding="UTF-8"%>
 		</form>
 		<c:choose>
 			<c:when test="${test.size()>0}">
+				<div class = "fontsize3">入学年度:${test.get(0).ent_year}</div>
 				<div class = "fontsize3">検索科目:${test.get(0).subject_name}</div><br>
 				<div class = "fontsize3">１回目の平均点:${avg.get(0).avg_point1}</div>
 				<div class = "fontsize3">２回目の平均点:${avg.get(0).avg_point2}</div>
@@ -93,11 +92,9 @@ pageEncoding="UTF-8"%>
 			<td>${test.point1}</td>
 			<td>${test.point2}</td>
 
-	<td><a href="student_transfer.jsp?
-	no=${student.no}&ent_year=${student.ent_year}<%--&name=${student.name}--%>&class_num=${student.class_num}">
-	変更</a></td>
-
-	<td><a href= "test_delete.jsp?
+	<td><a class="linkhover" href="test_update.jsp?student_name=${test.student_name}&student_no=${test.student_no}&class_num=${test.class_num}&subject_name=${test.subject_name}
+                                &subject_cd=${test.subject_cd}&point1=${test.point1}&point2=${test.point2}">変更</a></td>
+	<td><a class="linkhover" href= "test_delete.jsp?
 	student_no=${test.student_no}&class_num=${test.class_num}&subject_cd=${test.subject_cd}&subject_name=${test.subject_name}
 	&no=${test.no}&point1=${test.point1}&point2=${test.point2}">削除</a></td>
 	</tr>
@@ -105,7 +102,7 @@ pageEncoding="UTF-8"%>
 	</table>
 	</c:when>
 	<c:otherwise>
-		<div>成績情報が存在しませんでした</div>
+		<h1>成績情報が存在しませんでした</h1>
 
 
 	</c:otherwise>

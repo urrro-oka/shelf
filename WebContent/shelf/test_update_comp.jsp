@@ -7,12 +7,13 @@ pageEncoding="UTF-8"%>
 			<title>得点管理システム</title>
 		<div id = "title">得点管理システム</div>
 	</c:param>
+	<c:param name="side">　　<a class="linkhover branchside" href="Test_entry.action">成績登録</a><br></c:param>
 	<c:param name="scripts"></c:param>
-		<c:param name="side">　　<a class="linkhover branchside" href="Test_entry.action">成績登録</a><br></c:param>
+
+		<c:param name="side">　　<a class="linkhover" href="Test_entry.action">成績変更</a><br></c:param>
 	<c:param name="content">
 <form action="Test_list.action">
-    <h2 class="toptitle">成績削除</h2>
-    <p>削除が完了しました</p>
+    <h2 class="toptitle">変更が完了しました</h2>
     <input class="btn" type="submit" value = "成績参照"><br>
     <a class="linkhover" href="#" onclick="history.back()">戻る</a>
 </form>

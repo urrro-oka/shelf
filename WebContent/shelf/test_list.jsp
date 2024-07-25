@@ -9,14 +9,14 @@
         <div id="title">得点管理システム</div>
     </c:param>
 
-	<c:param name="side">　　<a href="test_entry">成績登録</a><br></c:param>
+	<c:param name="side">　　<a class="linkhover branchside" href="Test_entry.action">成績登録</a><br></c:param>
 
     <c:param name="scripts"></c:param>
     <c:param name="content">
         <div class="toptitle">
             <h2 class="h3 mb-3 fw-norma bg-secondary big-opacity-10 py-2 px-4">成績一覧</h2>
         </div>
-        <form action="test_search_subject" method="get">
+        <form action="Test_search_subject.action" method="get">
             <div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
                 <div>科目情報</div>
                 <div class="col-4 col4-1 line">
@@ -53,7 +53,7 @@
             </div>
         </form>
 
-        <form action="test_search_student" method="get">
+        <form action="Test_search_student.action" method="get">
             <div class="row border mx-3 mb-3 py-2 align-items-center rounded" id="filter">
                 <div>学生情報</div>
                 <label>学生番号</label>
@@ -88,18 +88,19 @@
 			                <td>${all.point1}</td>
 			                <td>${all.point2}</td>
 
+
                             <td>
-                                <a href="student_transfer.jsp?no=${student.no}&ent_year=${student.ent_year}&class_num=${student.class_num}">変更</a>
-                            </td>
-                            <td>
-                                <a href="student_delete.jsp?no=${student.no}&ent_year=${student.ent_year}&class_num=${student.class_num}">削除</a>
+                            	<a class="linkhover" href="test_update.jsp?student_name=${all.student_name}&student_no=${all.student_no}&class_num=${all.class_num}&subject_name=${all.subject_name}
+                                &subject_cd=${all.subject_cd}">変更</a></td>
+                            <td><a class="linkhover" href="test_delete.jsp?student_name=${all.student_name}&student_no=${all.student_no}&class_num=${all.class_num}&subject_name=${all.subject_name}
+                                &subject_cd=${all.subject_cd}&point1=${all.point1}&point2=${all.point2}">削除</a>
                             </td>
                         </tr>
                     </c:forEach>
                 </table>
             </c:when>
             <c:otherwise>
-                <div class="fontsize1">成績データはは存在しません</div>
+                <h1>成績データが存在しませんでした</h1>
             </c:otherwise>
         </c:choose>
     </c:param>

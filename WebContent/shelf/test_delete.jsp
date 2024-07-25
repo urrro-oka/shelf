@@ -8,6 +8,7 @@
 		<div id="title">得点管理システム</div>
 	</c:param>
 	<c:param name="scripts"></c:param>
+		<c:param name="side">　　<a class="linkhover branchside" href="Test_entry.action">成績登録</a><br></c:param>
 	<c:param name="content">
 
 		<% String student_no = request.getParameter("student_no"); %>
@@ -19,7 +20,7 @@
 
 		<h2 class="toptitle">成績削除</h2>
 		<p class="fontsize1">「削除してもよろしいですか？」</p>
-		<form action="test_delete" method="get">
+		<form action="Test_delete.action">
 			<table>
 				<tr>
 					<th>学生番号</th>
@@ -48,7 +49,7 @@
 			<input class="btnl" type="submit" value="削除する">
 
 			<p>
-				<a href="#" onclick="history.back()">戻る</a>
+				<a class="linkhover" href="#" onclick="history.back()">戻る</a>
 			</p>
 
 		</form>

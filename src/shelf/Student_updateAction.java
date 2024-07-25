@@ -3,16 +3,15 @@ package shelf;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import bean.Student;
 import dao.StudentDAO;
-@WebServlet(urlPatterns={"/shelf/student_update"})
-public class Student_update extends HttpServlet{
-	public void doGet (
+import tool.Action;
+
+public class Student_updateAction extends Action{
+	public String execute (
 			HttpServletRequest request, HttpServletResponse response
 		) throws ServletException, IOException {
 
@@ -32,12 +31,12 @@ public class Student_update extends HttpServlet{
 
 				StudentDAO dao=new StudentDAO();
 				int line=dao.Student_Update(p);
-				request.getRequestDispatcher("student_transfer_comp.jsp").forward(request, response);
+				return "student_transfer_comp.jsp";
 
 			} catch (Exception e) {
 				System.out.println("エラーshelf");
-				request.getRequestDispatcher("error.jsp").forward(request, response);
 				e.printStackTrace();
+				return "error.jsp";
 			}
 		}
 }

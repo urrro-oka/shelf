@@ -4,18 +4,17 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import bean.Student;
 import dao.StudentDAO;
+import tool.Action;
 
-@WebServlet(urlPatterns={"/shelf/student_insert"})
-public class Student_insert extends HttpServlet {
 
-	public void doGet (
+public class Student_insertAction extends Action {
+
+	public String execute (
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException{
 
@@ -37,15 +36,15 @@ public class Student_insert extends HttpServlet {
 				p.setClass_num(class_num);
 
 				int line=dao.Student_insert(p);
-				request.getRequestDispatcher("student_entry_comp.jsp").forward(request, response);
+				return "student_entry_comp.jsp";
 			}
 			else{
-				request.getRequestDispatcher("student_entry2.jsp").forward(request, response);
+				return "student_entry2.jsp";
 			}
 		} catch (Exception e) {
 			System.out.println("エラーshelf");
-			request.getRequestDispatcher("error.jsp").forward(request, response);
 			e.printStackTrace();
+			return "error.jsp";
 		}
 	}
 }

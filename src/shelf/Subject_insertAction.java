@@ -4,18 +4,17 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import bean.Subject;
 import dao.SubjectDAO;
+import tool.Action;
 
-@WebServlet(urlPatterns={"/shelf/subject_insert"})
-public class Subject_insert extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+public class Subject_insertAction extends Action {
+
+    public String execute(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
 
         try {
@@ -42,15 +41,15 @@ public class Subject_insert extends HttpServlet {
                 int line = dao.filter(p); // insertメソッドを使用すると仮定
 
                 // 挿入成功時のフォワード先
-                request.getRequestDispatcher("subject_entry_comp.jsp").forward(request, response);
+    			return "subject_entry_comp.jsp";
             }else{
-            	request.getRequestDispatcher("subject_entry2.jsp").forward(request, response);
+    			return "subject_entry2.jsp";
             }
         } catch (Exception e) {
             // エラーハンドリング
             System.out.println("エラーshelf");
             e.printStackTrace();
-            request.getRequestDispatcher("error.jsp").forward(request, response);
+            return "error.jsp";
         }
     }
 }

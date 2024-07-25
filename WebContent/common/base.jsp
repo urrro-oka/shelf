@@ -11,15 +11,19 @@
 <body>
 
 ${param.title}
+	<div class="login">
+		<a>パブロ・ディエゴ・ホセ・フランシスコ・ザビエル様</a>
+		<a href = "#" class="linkhover">ログアウト</a>
+	</div>
 ${param.scripts}
 		<section class= "me-4">
 		<div class = "all">
 		<div class="sidebar">
-			<br><a href="menu.jsp">メニュー</a><br>
-			<a href="student_list">学生管理</a><br>
-			<a href="test_list">成績管理</a><br>
+			<br><a href="menu.jsp" class="linkhover">メニュー</a><br>
+			<a href="Student_list.action" class="linkhover">学生管理</a><br>
+			<a href="Test_list.action" class="linkhover">成績管理</a><br>
 			${param.side }
-			<a href="subject_list">科目管理</a><br>
+			<a href="Subject_list.action" class="linkhover">科目管理</a><br>
 			${param.side_sub }
 		</div>
 			<div class="body">
@@ -27,5 +31,12 @@ ${param.content}
 </div>
 	</div>
 	</section>
+			<footer>
+    <p>大原学園</p>
+  <p class="copyright">
+    &copy; 2024 TIC
+    </p>
+    </footer>
 </body>
+
 </html>

@@ -7,13 +7,14 @@ pageEncoding="UTF-8"%>
 			<title>-科目情報変更-</title>
 		<div id = "title">得点管理システム</div>
 	</c:param>
+	<c:param name="side_sub">　　<a class="linkhover branchside" href="subject_entry.jsp">科目登録</a><br></c:param>
 	<c:param name="scripts"></c:param>
 	<c:param name="content">
     <% String cd = request.getParameter("cd"); %>
     <% String name = request.getParameter("name"); %>
 		<h2 class="toptitle">合格ライン登録</h2>
 
-<form action="subject_make_up" method="get">
+<form action="Subject_make_up.action" method="get">
 <table>
 	<tr>
 		<th>科目コード</th>
@@ -21,17 +22,17 @@ pageEncoding="UTF-8"%>
 	</tr>
 
 	<tr>
-		<th>科目名:</th>
+		<th>科目名</th>
 		<td><input type="text" name="name" value="<%=name %>" readonly style="border: none;" /></td>
 	</tr>
 	<tr>
-		<th>合格ライン:</th>
+		<th>合格ライン</th>
 		<td><input type="number" name="passed_point"/></td>
 	</tr>
 </table>
 <input class="btn" type="submit" value="変更">
 </form>
-<a href="subject_list">戻る</a>
+<a class="linkhover" href="Subject_list.action">戻る</a>
 </body>
 </c:param>
 

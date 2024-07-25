@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 <c:import url="/common/base.jsp" >
-
 	<c:param name="title">
 		<title>得点管理システム</title>
 		<div id="title">得点管理システム</div>
@@ -20,6 +19,8 @@
 			<tr>
 				<th>学生番号</th>
 
+
+				<a><font color="red">１回目が登録されていません！</font></a>
 				<td><select name="student_no" >
 						<option value="">-------</option>
 						<c:forEach var="student" items="${student}">
@@ -64,10 +65,11 @@
 			<tr>
 
 
-				<td><input type="submit" class ="btn" value="登録"></td>
+				<td><input type="submit" class = "btn" value="登録"></td>
 				<td><a class="linkhover" href="#" onclick="history.back()">戻る</a></td>
 			</tr>
 		</table>
 	</form>
+	</body>
 </c:param>
 </c:import>

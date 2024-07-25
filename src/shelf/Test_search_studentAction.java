@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -15,11 +13,12 @@ import bean.Test;
 import dao.StudentDAO;
 import dao.SubjectDAO;
 import dao.TestDAO;
+import tool.Action;
 
-@WebServlet(urlPatterns={"/shelf/test_search_subject"})
-public class Test_search_subject extends HttpServlet {
 
-	public void doGet (
+public class Test_search_studentAction extends Action {
+
+	public String execute (
 		HttpServletRequest request, HttpServletResponse response
 	) throws ServletException, IOException {
 
@@ -40,31 +39,21 @@ public class Test_search_subject extends HttpServlet {
 			request.setAttribute("year", list_year);
 			request.setAttribute("num", list_class);
 
-			String ent_year=request.getParameter("ent_year");
-			String class_num=request.getParameter("class_num");
-			String subject=request.getParameter("subject");
-
+			String id=request.getParameter("student_id");
+System.out.println(id);
 			Test p =new Test();
-			p.setClass_num(class_num);
-			p.setSubject_cd(subject);
+			p.setStudent_no(id);
 
-			System.out.println(ent_year);
-			System.out.println(p.getClass_num());
-			System.out.println(p.getSubject_cd());
 
 			TestDAO dao=new TestDAO();
-			List<Test> list=dao.Test_search_subject(ent_year,p);
-			List<Test> list_AVG=dao.Test_Avg(subject);
-
-			System.out.println(list);
+			List<Test> list=dao.Test_search_student(p);
 			request.setAttribute("test", list);
-			request.setAttribute("avg", list_AVG);
-			request.getRequestDispatcher("test_list_subject.jsp").forward(request, response);
+			return "test_list_student.jsp";
 
 		} catch (Exception e) {
 			System.out.println("エラーshelf");
-			request.getRequestDispatcher("error.jsp").forward(request, response);
 			e.printStackTrace();
+			return "error.jsp";
 		}
 	}
 }

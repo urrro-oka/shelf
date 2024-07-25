@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -13,11 +11,11 @@ import bean.Student;
 import bean.Subject;
 import dao.StudentDAO;
 import dao.SubjectDAO;
+import tool.Action;
 
-@WebServlet(urlPatterns = { "/shelf/test_entry" })
-public class Test_entry extends HttpServlet {
+public class Test_entryAction extends Action {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    public String execute(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     	try {
 //			TestDAO dao=new TestDAO();
@@ -30,7 +28,7 @@ public class Test_entry extends HttpServlet {
 
 			StudentDAO classdao=new StudentDAO();
 			List<Student> classlist=classdao.Class_num();
-			request.setAttribute("class", classlist);
+			request.setAttribute("class_num", classlist);
 
 			SubjectDAO sbdao=new SubjectDAO();
 			List<Subject> subjectlist=sbdao.SubjectAll();
@@ -38,11 +36,12 @@ public class Test_entry extends HttpServlet {
 
 
 
-			request.getRequestDispatcher("test_entry.jsp").forward(request, response);
+			return "test_entry.jsp";
 
 		} catch (Exception e) {
 			System.out.println("エラー");
 			e.printStackTrace();
+			return "error.jsp";
 		}
     }
 }

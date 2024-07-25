@@ -8,11 +8,13 @@ pageEncoding="UTF-8"%>
 		<div id = "title">得点管理システム</div>
 	</c:param>
 	<c:param name="scripts"></c:param>
+
+		<c:param name="side">　　<a class="linkhover branchside" href="Test_entry.action">成績登録</a><br></c:param>
 	<c:param name="content">
-<form action="test_list">
+<form action="Test_list.action">
     <h2 class="toptitle">登録が完了しました</h2>
-    <a href="#" onclick="history.back()">戻る</a><br>
-    <input class="btn" type="submit" value = "成績参照">
+    <input class="btn" type="submit" value = "成績参照"><br>
+        <a class="linkhover" href="#" onclick="history.back()">戻る</a>
 </form>
 
 </c:param>

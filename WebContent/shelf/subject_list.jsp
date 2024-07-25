@@ -8,14 +8,16 @@ pageEncoding="UTF-8"%>
 		<div id = "title">得点管理システム</div>
 	</c:param>
 
-	<c:param name="side_sub">　　<a href="subject_entry.jsp">科目登録</a><br></c:param>
+	<c:param name="side_sub">　　<a class="linkhover branchside" href="subject_entry.jsp">科目登録</a><br></c:param>
 
 	<c:param name="scripts"></c:param>
 	<c:param name="content">
     <h2 class="toptitle">科目管理</h2>
-    <a href="subject_entry.jsp">新規登録</a>
+    <a class="linkhover" href="subject_entry.jsp">新規登録</a>
+
+    <c:choose>
+    <c:when test="${subject.size() > 0}">
     <table>
-        <thead>
             <tr>
                 <th>科目コード</th>
                 <th>科目名</th>
@@ -23,8 +25,6 @@ pageEncoding="UTF-8"%>
                 <th></th>
                 <th></th>
             </tr>
-        </thead>
-        <tbody>
         	<c:forEach var="subject" items="${subject}">
             <tr>
                 <td>${subject.cd}</td>
@@ -32,13 +32,19 @@ pageEncoding="UTF-8"%>
                 <td>${subject.passed_point}</td>
 
 
-                <td><a href="subject_make_up.jsp?cd=${subject.cd}&name=${subject.name}">合格ライン</a></td>
-                <td><a href="subject_update.jsp?cd=${subject.cd}&name=${subject.name}">変更</a>・
-               <a href="subject_delete.jsp?cd=${subject.cd}&name=${subject.name}">削除</a></td>
+                <td><a class="linkhover" href="subject_make_up.jsp?cd=${subject.cd}&name=${subject.name}">合格ライン</a></td>
+                <td><a class="linkhover" href="subject_update.jsp?cd=${subject.cd}&name=${subject.name}">変更</a>・
+               <a class="linkhover" href="subject_delete.jsp?cd=${subject.cd}&name=${subject.name}">削除</a></td>
             </tr>
+
             </c:forEach>
-        </tbody>
-    </table>
+      </table>
+            </c:when>
+            <c:otherwise>
+                <h1>科目データが存在しませんでした</h1>
+            </c:otherwise>
+           </c:choose>
+
 </body>
 </c:param>
 </c:import>
