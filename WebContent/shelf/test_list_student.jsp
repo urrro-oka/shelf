@@ -76,7 +76,7 @@
 		</form>
 		<c:choose>
 <c:when test="${test.size()>0}">
-<div class = "fontsize1">学生名:${test.get(0).student_name}</div>
+<div class = "fontsize1"><a>学生名:${test.get(0).student_name}</a></div>
 <table class="table table-hover">
 <tr>
 <th>科目名</th>
@@ -85,6 +85,8 @@
 <th>点数</th>
 <th>合格ライン</th>
 <th>追試</th>
+<th></th>
+<th></th>
 </tr>
 <c:forEach var="test" items="${test}">
 <tr>

@@ -71,9 +71,9 @@ pageEncoding="UTF-8"%>
 		<c:choose>
 			<c:when test="${test.size()>0}">
 				<div class = "fontsize3">入学年度:${test.get(0).ent_year}</div>
-				<div class = "fontsize3">検索科目:${test.get(0).subject_name}</div><br>
-				<div class = "fontsize3">１回目の平均点:${avg.get(0).avg_point1}</div>
-				<div class = "fontsize3">２回目の平均点:${avg.get(0).avg_point2}</div>
+				<div class = "fontsize3">検索科目:${test.get(0).subject_name}</div>
+				<div class = "fontsize3">１回目の平均点:${avg.get(0).avg_point1}点</div>
+				<div class = "fontsize3">２回目の平均点:${avg.get(0).avg_point2}点</div>
 				<table class="table table-hover">
 				<tr>
 					<th>入学年度</th>
@@ -82,6 +82,8 @@ pageEncoding="UTF-8"%>
 					<th>氏名</th>
 					<th>１回</th>
 					<th>２回</th>
+				    <th></th>
+					<th></th>
 				</tr>
 	<c:forEach var="test" items="${test}">
 		<tr>

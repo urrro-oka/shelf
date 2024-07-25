@@ -64,6 +64,7 @@ a{
     border: 1px solid #400080;
     border-radius: 5px;
     padding: 5px;
+    font-family: serif;
 }
 
 .menubox{
@@ -241,7 +242,8 @@ footer {
 table{
   border-collapse: collapse;
   border-spacing: 0;
-  width: 95%;
+  width: 100%;
+
 }
 
 .table2{
@@ -253,8 +255,8 @@ table{
 }
 
 table tr{
-  border-top: solid 1px #ddd;
   cursor: pointer;
+
 }
 
 table th{
@@ -262,6 +264,11 @@ table th{
   background-color: #ddD9FF;
   position:sticky;
   top:0;
+
+}
+table td{
+	font-family: sans-serif;
+	border-top:solid 1px #ccc
 }
 
 table th,table td{
@@ -320,6 +327,15 @@ table th,table td{
 
 }
 .login_page{
-	text-align:center;}
+	text-align:center;
+	font-family: serif;
+	border: 1px solid #bfbce0;
+    border-radius: 5px;
+    width:70%;
+    height:60%;
+    margin-left:auto;
+  	margin-right:auto;
+  	margin-top:5%;
+  	margin-bottom:auto;
 }
 

@@ -67,7 +67,7 @@
 
         <c:choose>
             <c:when test="${test.size() > 0}">
-            <div class="fontsize1">全データ表示 (${test.size()}件)</div>
+            <div class="fontsize1"><a>全データ表示 (${test.size()}件)</a></div>
                 <table class="table table-hover">
 			        <tr>
 			            <th>入学年度</th>
@@ -77,6 +77,8 @@
 			            <th>氏名</th>
 			            <th>１回目</th>
 			            <th>２回目</th>
+			            <th></th>
+						<th></th>
 			        </tr>
                        <c:forEach var="all" items="${test}">
 			            <tr>

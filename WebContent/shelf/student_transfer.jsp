@@ -43,21 +43,20 @@ pageEncoding="UTF-8"%>
         </select></td></tr>
 
     <tr>
+    <th>在学中</t>
     <td><div class="pos1">
-			<label class="form-check-label" for="student-f3-check">在学中
+			<label class="form-check-label" for="student-f3-check">
 						<%--パラメーター3が存在している場合checkedを追記--%>
 						<input class="fore-check-input" type="checkbox"
 						id="student-f3-check" name="is_attend" value="True">
 
 						<span class="ECM_CheckboxInput-DummyInput"></span><span class="ECM_CheckboxInput-LabelText"></span>
-
-						<c:if test="${!empty f3}">checked</c:if>
 			</label>
-</div></td>
+	</div></td>
+	</tr>
+	<tr>
+	<td>    <a class="linkhover" href="#" onclick="history.back()">戻る</a></td>
 	<td>   <input class="btn" type="submit" value="変更"></input></td>
-    </tr>
-    <tr>
-    <td>    <a class="linkhover" href="#" onclick="history.back()">戻る</a></td>
     </tr>
 </table>
 

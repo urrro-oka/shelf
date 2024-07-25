@@ -53,7 +53,7 @@ pageEncoding="UTF-8"%>
 		</form>
 		<c:choose>
 			<c:when test="${student.size()>0}">
-				<div class = "fontsize1">検索結果:${student.size()}件</div>
+				<div class = "fontsize1"><a>検索結果:${student.size()}件</a></div>
 				<table class="table table-hover">
 				<tr>
 					<th>入学年度</th>
