@@ -41,8 +41,9 @@ pageEncoding="UTF-8"%>
         <select name="class_num">
         	<option value="<%=class_num %>"><%=class_num %></option>
         </select></td></tr>
-</table>
-<div class="pos">
+
+    <tr>
+    <td><div class="pos1">
 			<label class="form-check-label" for="student-f3-check">在学中
 						<%--パラメーター3が存在している場合checkedを追記--%>
 						<input class="fore-check-input" type="checkbox"
@@ -52,15 +53,16 @@ pageEncoding="UTF-8"%>
 
 						<c:if test="${!empty f3}">checked</c:if>
 			</label>
-</div>
+</div></td>
+	<td>   <input class="btn" type="submit" value="変更"></input></td>
+    </tr>
+    <tr>
+    <td>    <a class="linkhover" href="#" onclick="history.back()">戻る</a></td>
+    </tr>
+</table>
 
-    <p>
-    <input class="btn" type="submit" value="変更"></input>
-    </p>
+
 </form>
-    <p>
-    <a class="linkhover" href="#" onclick="history.back()">戻る</a><br>
-    </p>
 
 </c:param>
 </c:import>

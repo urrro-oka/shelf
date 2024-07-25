@@ -14,6 +14,7 @@
 
 	<h2 class="toptitle">成績新規登録</h2>
 	<form action="Test_insert.action" method="get">
+	<div class="table2">
 		<table>
 
 			<tr>
@@ -64,11 +65,11 @@
 			</tr>
 			<tr>
 
-
-				<td><input type="submit" class = "btn" value="登録"></td>
 				<td><a class="linkhover" href="#" onclick="history.back()">戻る</a></td>
+				<td><input type="submit" class = "btn" value="登録"></td>
 			</tr>
 		</table>
+	</div>
 	</form>
 	</body>
 </c:param>

@@ -6,14 +6,15 @@
 <html>
 <head>
 	<link rel="stylesheet" href="../css/style.css">
+	<link rel="icon" href="../css/hand.ico">
 </head>
 
 <body>
 
 ${param.title}
 	<div class="login">
-		<a>パブロ・ディエゴ・ホセ・フランシスコ・ザビエル様</a>
-		<a href = "#" class="linkhover">ログアウト</a>
+		<a>${customer.name }様</a>
+		<a href = "../login_logout/Logout.action" class="linkhover">ログアウト</a>
 	</div>
 ${param.scripts}
 		<section class= "me-4">

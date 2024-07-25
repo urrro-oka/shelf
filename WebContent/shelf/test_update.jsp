@@ -21,6 +21,7 @@
 
 	<h2 class="toptitle">成績変更</h2>
 	<form action="Test_update.action" method="get">
+	<div class="table2">
 		<table>
 
 			<tr>
@@ -59,11 +60,11 @@
 			<input type="hidden" name="student_name" value="<%=student_name%>">
 			<input type="hidden" name="subject_name" value="<%=subject_name%>">
 			<input type="hidden" name="class_num" value="<%=class_num%>">
-
-				<td><input type="submit" class ="btn" value="変更"></td>
 				<td><a class="linkhover" href="#" onclick="history.back()">戻る</a></td>
+				<td><input type="submit" class ="btn" value="変更"></td>
 			</tr>
 		</table>
+		</div>
 	</form>
 </c:param>
 </c:import>

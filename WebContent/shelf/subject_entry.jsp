@@ -12,6 +12,7 @@ pageEncoding="UTF-8"%>
 	<c:param name="content">
 <form action="Subject_insert.action" method="get">
     <h2 class="toptitle">科目情報登録</h2>
+    <div class="table2">
     <table>
     <tr>
         <th>科目コード</th>
@@ -21,12 +22,13 @@ pageEncoding="UTF-8"%>
         <th>科目名</th>
         <td><input type="text" name="name" value="" maxlength="30" placeholder="科目名を入力してください" required></td>
     </tr>
+    <tr>
+    	<td><a class="linkhover" href="Subject_list.action">戻る</a></td>
+        <td><input class="btn" type="submit" value="登録"></td>
+    </tr>
 	</table>
+	</div>
 
-    <input class="btn" type="submit" value="登録">
-    <p>
-    <a class="linkhover" href="#" onclick="history.back()">戻る</a>
-    </p>
 </form>
 </body>
 </c:param>

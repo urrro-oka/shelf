@@ -15,24 +15,29 @@ pageEncoding="UTF-8"%>
 		<h2 class="toptitle">合格ライン登録</h2>
 
 <form action="Subject_make_up.action" method="get">
+<div class="table2">
 <table>
 	<tr>
 		<th>科目コード</th>
-		<td><input type="text" name="cd" value="<%=cd %>" readonly style="border: none;" /></td>
+		<td><input type="hidden" name="cd" value="<%=cd %>"><%=cd %></td>
 	</tr>
 
 	<tr>
 		<th>科目名</th>
-		<td><input type="text" name="name" value="<%=name %>" readonly style="border: none;" /></td>
+		<td><input type="hidden" name="name" value="<%=name %>"><%=name %></td>
 	</tr>
 	<tr>
 		<th>合格ライン</th>
-		<td><input type="number" name="passed_point"/></td>
+		<td><input type="number" min="0" max="100" name="passed_point"/></td>
+	</tr>
+	<tr>
+	<td><a class="linkhover" href="Subject_list.action">戻る</a></td>
+	<td><input class="btn" type="submit" value="変更"></td>
 	</tr>
 </table>
-<input class="btn" type="submit" value="変更">
+</div>
 </form>
-<a class="linkhover" href="Subject_list.action">戻る</a>
+
 </body>
 </c:param>
 

@@ -27,9 +27,10 @@ public class LoginAction extends Action {
             return null; // メソッドがリダイレクトを行ったためnullを返す
         } else {
             // ログイン失敗
-            request.setAttribute("errorMessage", "ログインIDまたはパスワードが正しくありません。");
-            response.sendRedirect("login-error.jsp"); // ログインページにエラーメッセージを表示してリダイレクト
-            return null; // メソッドがリダイレクトを行ったためnullを返す
+        	String a =  "ログインIDまたはパスワードが正しくありません。";
+            request.setAttribute("errorMessage", a);
+//            response.("login.jsp"); // ログインページにエラーメッセージを表示してリダイレクト
+            return "login.jsp"; // メソッドがリダイレクトを行ったためnullを返す
         }
     }
 }

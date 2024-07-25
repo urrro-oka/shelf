@@ -12,6 +12,7 @@ pageEncoding="UTF-8"%>
     <h2 class="toptitle">学生情報登録</h2>
     	<a><font color="red">同じ学生番号が存在しています！</font></a>
     <form action="Student_insert.action">
+    <div class="table2">
     <table>
     <tr>
         <th>入学年度</th>
@@ -32,11 +33,12 @@ pageEncoding="UTF-8"%>
         </select></td>
 	</tr>
 	<tr>
-    <td><input class="btn" type="submit" value="登録"></td>
 
         <td><a class="linkhover" href="#" onclick="history.back()">戻る</a></td>
+        <td><input class="btn" type="submit" value="登録"></td>
 	</tr>
     </table>
+    </div>
 </form>
 </c:param>
 </c:import>

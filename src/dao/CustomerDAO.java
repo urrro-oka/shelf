@@ -26,6 +26,7 @@ public class CustomerDAO extends DAO {
                 customer.setId(rs.getInt("id"));
                 customer.setLogin(rs.getString("login"));
                 customer.setPassword(rs.getString("password"));
+                customer.setName(rs.getString("name"));
 
                 // 顧客情報取得成功のデバッグメッセージを追加
                 System.out.println("顧客情報取得成功: " + customer.getLogin());

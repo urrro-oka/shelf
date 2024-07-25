@@ -43,8 +43,6 @@ pageEncoding="UTF-8"%>
 						id="student-f3-check" name="attend" value="True">
 
 						<span class="ECM_CheckboxInput-DummyInput"></span><span class="ECM_CheckboxInput-LabelText">在学中</span>
-
-						<c:if test="${!empty f3}">checked</c:if>
 					</label>
 				</div>
 				<div class="col-2 text-center line">
