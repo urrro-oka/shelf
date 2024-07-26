@@ -1,17 +1,16 @@
 .toptitle {
 	text-align: center;
-	color: #54b9f5;
+	color: #000;
 	font-family: serif;
-	background-color:#e3f5ff;
-	border-radius: 50px 50px 10px 10px;
+	background-color:#eee;
 }
 .toptitle1 {
 	display:inline-block;
 	text-align: center;
 	margin:1% 10%;
-	color: #54b9f5;
+	color: #000;
 	font-family: serif;
-	background-color:#e3f5ff;
+	background-color:#eee;
 	border-radius: 50px 50px 10px 10px;
 	width: 80%;
 
@@ -21,7 +20,7 @@
 	font-size: 35px;
 	width:70%;
 	color: white;
-  	background: linear-gradient(90deg, #54b9f5, #fff);
+  	background: linear-gradient(90deg, #000, #fff);
 	font-family: serif;
 }
 .login{
@@ -34,11 +33,11 @@ a{
 	display:inline-block;
 	transition: all .2s linear;
 	color:black;
-	box-shadow: 2px 2px 2px #54b9f5;
+	box-shadow: 2px 2px 2px #000;
 	text-decoration: none;
 	background-color: #ffffff;
     margin: 10px 10px 10px 10px;
-    border: 1px solid #b1d3eb;
+    border: 1px solid #949494;
     border-radius: 5px;
     padding: 5px;
 	font-family: serif;
@@ -49,7 +48,8 @@ a{
 	transition: all .2s linear;
 	box-shadow: 2px 2px 2px #ccc;
 	text-decoration: none;
-	background: linear-gradient(135deg, #54b9f5, #fff);
+	background: linear-gradient(150deg, #fff,#000, #fff);
+	  	color:#fff;
 }
 
 .branchside{
@@ -122,7 +122,7 @@ footer {
   }
 
   .border{
-    border: 1px solid #54b9f5;
+    border: 1px solid #000;
     text-align: center;
     padding: 15px;
     border-radius: 10px;
@@ -155,7 +155,7 @@ footer {
 .col-4.col4-1{
 	position:relative;
 	border-radius: 2px;
-	border: 1px solid #54b9f5;
+	border: 1px solid #000;
   	border-radius: 10px;
 	background: #ffffff;
 }
@@ -168,12 +168,12 @@ footer {
 	content: '';
 	border-left: 6px solid transparent;
 	border-right: 6px solid transparent;
-	border-top: 6px solid #54b9f5;
+	border-top: 6px solid #000;
 	pointer-events: none;
 }
 .col-4.col4-1 select {
 	padding: 8px 38px 8px 8px;
-	color: #54b9f5;
+	color: #000;
 }
 
 
@@ -262,7 +262,7 @@ table tr{
 
 table th{
 	font-family: sans-serif;
-  background-color: #e3f5ff;
+  background-color: #dbdadc;
   position:sticky;
   top:0;
 
@@ -279,7 +279,7 @@ table th,table td{
 }
 
 .btn{
-	border: 1px solid #54b9f5;
+	border: 1px solid #000;
  	border-radius: 2vh;
 	background: #fff;
 	width: 5em;
@@ -293,11 +293,11 @@ table th,table td{
 .btn:hover {
 	transition: all .30s linear;
   color: #fff;
-  background: #54b9f5;
+  background: #000;
 }
 
 .btnl{
-	border: 1px solid #54b9f5;
+	border: 1px solid #000;
  	border-radius: 2vh;
 	background: #fff;
 	width:5.5em;
@@ -311,7 +311,7 @@ table th,table td{
 .btnl:hover {
 	transition: all .30s linear;
   color: #fff;
-  background: #54b9f5;
+  background: #000;
 }
 
 .pos1 {
@@ -330,7 +330,7 @@ table th,table td{
 .login_page{
 	text-align:center;
 	font-family: serif;
-	border: 1px solid #b1d3eb;
+	border: 1px solid #949494;
     border-radius: 5px;
     width:70%;
     height:60%;

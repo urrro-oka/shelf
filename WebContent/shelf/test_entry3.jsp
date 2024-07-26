@@ -22,7 +22,7 @@
 
 
 				<a><font color="red">１回目が登録されていません！</font></a>
-				<td><select name="student_no" >
+				<td><select name="student_no" required>
 						<option value="">-------</option>
 						<c:forEach var="student" items="${student}">
 							<option value="${student.no}">${student.no}：${student.name}</option>
