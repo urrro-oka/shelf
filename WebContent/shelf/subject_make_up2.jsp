@@ -13,7 +13,7 @@ pageEncoding="UTF-8"%>
     <% String cd = request.getParameter("cd"); %>
     <% String name = request.getParameter("name"); %>
 		<h2 class="toptitle">合格ライン登録</h2>
-
+<a><font color="red">この科目は存在しません</font></a>
 <form action="Subject_make_up.action" method="get">
 <div class="table2">
 <table>

@@ -17,7 +17,7 @@ pageEncoding="UTF-8"%>
   <table>
     <tr>
         <th>科目コード</th>
-        <td><input type="text" name="cd" value="" maxlength="30" placeholder="科目コードを入力してください" required></td>
+        <td><input type="text" name="cd" value="" maxlength="3" minlength="3" placeholder="科目コードを入力してください" required></td>
    	</tr>
     <tr>
         <th>科目名</th>

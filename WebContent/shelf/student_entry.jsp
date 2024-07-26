@@ -19,7 +19,7 @@ pageEncoding="UTF-8"%>
 	</tr>
 	<tr>
         <th>学生番号</th>
-        <td><input type="text" name="no" max="10" required placeholder="学生番号を入力してください"></input></td>
+        <td><input type="text" name="no" maxlength="7" minlength="7" required placeholder="学生番号を入力してください"></input></td>
 	</tr>
 	<tr>
         <th>氏名</th>

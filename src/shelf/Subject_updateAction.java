@@ -26,10 +26,14 @@ public class Subject_updateAction extends Action {
 			System.out.println(cd);
 			System.out.println(name);
 
+
             SubjectDAO dao=new SubjectDAO();
 			int line=dao.Subject_Update(p);
+			if (line != 0){
 			return "subject_update_comp.jsp";
-
+			}else{
+			return "subject_update2.jsp";
+			}
 
         } catch (Exception e) {
             // その他の例外に対するエラーハンドリング

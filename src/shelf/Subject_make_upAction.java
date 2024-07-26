@@ -31,8 +31,11 @@ public class Subject_make_upAction extends Action {
 
             SubjectDAO dao=new SubjectDAO();
 			int line=dao.Subject_Make_Up(p);
-			return "subject_make_up_comp.jsp";
-
+			if (line!=0){
+				return "subject_make_up_comp.jsp";
+			}else{
+				return "subject_make_up2.jsp";
+			}
 
         } catch (Exception e) {
             // その他の例外に対するエラーハンドリング
