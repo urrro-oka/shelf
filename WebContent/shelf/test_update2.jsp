@@ -45,7 +45,7 @@
 			<tr>
 				<th>得点</th>
 
-				<td><input type="text" name="point" max="3" required
+				<td><input type="text" name="point" min="0" max="100" required
 					placeholder="得点を入力してください"></td>
 			</tr>
 			<tr>
