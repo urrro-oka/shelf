@@ -22,7 +22,7 @@ public class LogoutAction extends Action {
 		} catch (Exception e) {
 			System.out.println("ログアウトエラー");
 			e.printStackTrace();
-			return "error.jsp";
+			return "../shelf/error.jsp";
 		}
 	}
 

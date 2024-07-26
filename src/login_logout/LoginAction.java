@@ -37,7 +37,7 @@ public class LoginAction extends Action {
 		} catch (Exception e) {
 			System.out.println("ログインエラー");
 			e.printStackTrace();
-			return "error.jsp";
+			return "../shelf/error.jsp";
 		}
     }
 }

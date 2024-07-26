@@ -15,6 +15,7 @@ pageEncoding="UTF-8"%>
     <h2 class="toptitle">科目情報・変更完了</h2>
     <p>登録が完了しました</p>
     <a class="linkhover" href="Subject_list.action">科目一覧</a><br>
+        <a class="linkhover" href="#" onclick="history.back()">戻る</a><br>
 
 
 </body>

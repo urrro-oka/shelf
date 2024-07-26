@@ -14,8 +14,9 @@ pageEncoding="UTF-8"%>
     <p class="fontsize2">学生情報の削除が完了しました。</p>
 
 <form action="Student_list.action">
-    <a class="linkhover" href="#" onclick="history.back()">戻る</a><br>
-    <input class="btnl" type="submit" value="学生一覧">
+
+    <input class="btnl" type="submit" value="学生一覧"><br>
+        <a class="linkhover" href="#" onclick="history.back()">戻る</a>
 </form>
 </c:param>
 </c:import>
