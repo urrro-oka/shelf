@@ -60,7 +60,7 @@ pageEncoding="UTF-8"%>
                 <div class= "row border mx-3 mb-3 py-2 align-items-center rounded " id="filter">
 					<div>学生情報</div>
 						<label>学生番号</label>
-							<input type="text" class ="ef"  placeholder="学生番号を入力してください" name="student_id" required>
+							<input type="text" class ="ef2"  placeholder="半角を入力してください" name="student_id" required>
 
 				<div class="col-2 text-center line">
 					<button class="btn btn-secondary" id="filter-button">検索</button>

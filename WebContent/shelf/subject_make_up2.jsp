@@ -28,7 +28,7 @@ pageEncoding="UTF-8"%>
 	</tr>
 	<tr>
 		<th>合格ライン</th>
-		<td><input type="number" class="ef" min="0" max="100" name="passed_point" required/></td>
+		<td><input type="number" class="ef" min="0" max="100" name="passed_point" required placeholder="半角数字で入力してください"/></td>
 	</tr>
 	<tr>
 	<td><a class="linkhover" href="Subject_list.action">戻る</a></td>

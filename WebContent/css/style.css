@@ -65,7 +65,7 @@ a{
 	text-decoration: none;
 	background-color: #ffffff;
     margin: 10px 10px 10px 10px;
-    border: 1px solid #400080;
+    border: 1px solid #8ec1ff;
     border-radius: 5px;
     padding: 5px;
 
@@ -346,9 +346,23 @@ table th,table td{
 	border-radius: 50px;
 	border-color:#54b9f5;
 	font-family: serif;
+	width:50%;
+
 }
 
 .ef:focus{
+	outline: none;
+	font-family: serif;
+
+}
+.ef2{
+	border-radius: 50px;
+	border-color:#54b9f5;
+	font-family: serif;
+
+}
+
+.ef2:focus{
 	outline: none;
 	font-family: serif;
 

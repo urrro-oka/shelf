@@ -16,7 +16,7 @@ pageEncoding="UTF-8"%>
     <table>
     <tr>
         <th>入学年度</th>
-        <td><input name="ent_year" type="text" class ="ef"  required></td>
+        <td><input name="ent_year" type="text" class ="ef"  required placeholder="入学年度を入力してください"></td>
 	</tr>
 	<tr>
         <th>学生番号</th>
