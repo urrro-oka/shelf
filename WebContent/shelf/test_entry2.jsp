@@ -22,7 +22,7 @@
 
 
 				<a><font color="red">すでに受験済みです！</font></a>
-				<td><select name="student_no" required>
+				<td><select class="puru" name="student_no" required>
 						<option value="">-------</option>
 						<c:forEach var="student" items="${student}">
 							<option value="${student.no}">${student.no}：${student.name}</option>
@@ -32,7 +32,7 @@
 			<tr>
 				<th>クラス</th>
 
-				<td><select name="class_num" required>
+				<td><select class="puru" name="class_num" required>
 						<option value="">-------</option>
 						<c:forEach var="student" items="${class_num}">
 							<option value="${student.class_num}">${student.class_num}</option>
@@ -42,7 +42,7 @@
 			<tr>
 				<th>科目</th>
 
-				<td><select name="subject_cd" required>
+				<td><select class="puru" name="subject_cd" required>
 						<option value="">-------</option>
 						<c:forEach var="subject" items="${subject}">
 							<option value="${subject.cd}">${subject.name}</option>
@@ -52,7 +52,7 @@
 			<tr>
 				<th>回数</th>
 
-				<td><select name="no" required>
+				<td><select class="puru" name="no" required>
 						<option value="1">1</option>
 						<option value="2">2</option>
 				</select></td>
@@ -60,7 +60,7 @@
 			<tr>
 				<th>得点</th>
 
-				<td><input type="number" name="point" min="0" max="100" required
+				<td><input type="number" class="ef" name="point" min="0" max="100" required
 					placeholder="得点を入力してください"></td>
 			</tr>
 			<tr>

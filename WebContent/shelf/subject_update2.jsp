@@ -26,7 +26,7 @@ pageEncoding="UTF-8"%>
 
 	<tr>
 		<th>科目名</th>
-		<td><input type="text" name="name" value="<%=name %>" maxlength="20" required /></td>
+		<td><input type="text" class ="ef"  name="name" value="<%=name %>" maxlength="20" required /></td>
 	</tr>
 	<tr>
 	<td><a class="linkhover" href="Subject_list.action">戻る</a></td>

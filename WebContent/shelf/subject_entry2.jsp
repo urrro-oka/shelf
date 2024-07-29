@@ -17,11 +17,11 @@ pageEncoding="UTF-8"%>
   <table>
     <tr>
         <th>科目コード</th>
-        <td><input type="text" name="cd" value="" maxlength="3" minlength="3" placeholder="科目コードを入力してください" required></td>
+        <td><input type="text" class ="ef"  name="cd" value="" maxlength="3" minlength="3" placeholder="科目コードを入力してください" required></td>
    	</tr>
     <tr>
         <th>科目名</th>
-        <td><input type="text" name="name" value="" maxlength="30" placeholder="科目名を入力してください" required></td>
+        <td><input type="text" class ="ef"  name="name" value="" maxlength="30" placeholder="科目名を入力してください" required></td>
     </tr>
     <tr>
     	<td><a class="linkhover" href="Subject_list.action">戻る</a></td>

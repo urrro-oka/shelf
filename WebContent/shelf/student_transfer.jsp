@@ -32,13 +32,13 @@ pageEncoding="UTF-8"%>
 
         <tr>
     <th><label>氏名</label></th><td>
-    <input placeholder="氏名" type="text" id="name" name="name" value="<%=name %>" required></td></tr>
+    <input placeholder="氏名" type="text" class ="ef"  id="name" name="name" value="<%=name %>" required></td></tr>
 
 
 
                 <tr>
     <th><label>クラス</label></th><td>
-        <select name="class_num">
+        <select class="puru" name="class_num">
         	<option value="<%=class_num %>"><%=class_num %></option>
         </select></td></tr>
 

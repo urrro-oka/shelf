@@ -37,7 +37,7 @@
 			<tr>
 				<th>回数</th>
 
-				<td><select name="no" required>
+				<td><select class="puru" name="no" required>
 						<option value="1">1</option>
 						<option value="2">2</option>
 				</select></td>
@@ -45,7 +45,7 @@
 			<tr>
 				<th>得点</th>
 
-				<td><input type="number" name="point" min="0" max="100" required
+				<td><input type="number" class="ef" name="point" min="0" max="100" required
 					placeholder="得点を入力してください"></td>
 			</tr>
 			<tr>

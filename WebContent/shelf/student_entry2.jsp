@@ -16,19 +16,19 @@ pageEncoding="UTF-8"%>
     <table>
     <tr>
         <th>入学年度</th>
-        <td><input name="ent_year" type="text" required></td>
+        <td><input name="ent_year" type="text" class ="ef"  required></td>
 	</tr>
 	<tr>
         <th>学生番号</th>
-        <td><input type="text" name="no" maxlength="7" minlength="7"" required placeholder="学生番号を入力してください"></input></td>
+        <td><input type="text" class ="ef"  name="no" maxlength="7" minlength="7"" required placeholder="学生番号を入力してください"></input></td>
 	</tr>
 	<tr>
         <th>氏名</th>
-        <td><input type="text" name="name" required placeholder="氏名を入力してください"></td>
+        <td><input type="text" class ="ef"  name="name" required placeholder="氏名を入力してください"></td>
 	</tr>
 	<tr>
         <th>クラス</th>
-        <td><select name="class_num">
+        <td><select class="puru" name="class_num">
             <option value="131">131</option>
         </select></td>
 	</tr>
