@@ -31,12 +31,34 @@ public class Student_searchAction extends Action {
 			String ent_year=request.getParameter("ent_year");
 			String class_num=request.getParameter("class_num");
 			String attend=request.getParameter("attend");
+			Boolean is_attend = Boolean.valueOf(attend);
 			StudentDAO dao=new StudentDAO();
-			List<Student> list=dao.Student_search(ent_year,class_num,attend);
-			request.setAttribute("student", list);
+
+			request.setAttribute("ent_year", ent_year);
+			request.setAttribute("class_num", class_num);
+			request.setAttribute("attend", attend);
 			request.setAttribute("list_year", list_year);
 			request.setAttribute("list_class", list_class);
-			return "student_list.jsp";
+
+			System.out.println(attend);
+			System.out.println(class_num);
+			System.out.println(ent_year);
+
+			if(ent_year==""&&class_num==""&&attend==null){
+				List<Student> list=dao.StudentAll();
+				request.setAttribute("student", list);
+				return "student_list.jsp";
+			}
+			else if (is_attend){
+				List<Student> list=dao.Student_search1(ent_year,class_num);
+				request.setAttribute("student", list);
+				return "student_list.jsp";
+			}
+			else{
+				List<Student> list=dao.Student_search2(ent_year,class_num);
+				request.setAttribute("student", list);
+				return "student_list.jsp";
+			}
 
 		} catch (Exception e) {
 			System.out.println("エラーshelf");

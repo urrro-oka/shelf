@@ -4,7 +4,7 @@ pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 <c:import url="/common/base.jsp">
 	<c:param name="title">
-			<title>得点管理システム</title>
+			<title>-成績一覧(科目別)-</title>
 		<div id = "title">得点管理システム</div>
 	</c:param>
 

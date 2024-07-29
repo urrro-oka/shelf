@@ -4,7 +4,7 @@
 <% request.setCharacterEncoding("UTF-8"); %>
 <c:import url="/common/base.jsp">
 	<c:param name="title">
-		<title>-成績削除</title>
+		<title>-成績削除-</title>
 		<div id="title">得点管理システム</div>
 	</c:param>
 	<c:param name="scripts"></c:param>

@@ -4,7 +4,7 @@ pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 <c:import url="/common/base.jsp">
 	<c:param name="title">
-			<title>得点管理システム</title>
+			<title>-学生一覧-</title>
 		<div id = "title">得点管理システム</div>
 	</c:param>
 	<c:param name="scripts"></c:param>
@@ -54,6 +54,27 @@ pageEncoding="UTF-8"%>
 		<c:choose>
 			<c:when test="${student.size()>0}">
 				<div class = "fontsize1"><a>検索結果:${student.size()}件</a></div>
+				<c:choose>
+				<c:when test= "${attend ==null  && empty ent_year && empty class_num}"></c:when>
+
+				<c:otherwise>
+				<div class="mincho">検索結果>>></div>
+					<c:if test="${!empty ent_year}"><a>入学年度：${ent_year }</a></c:if>
+					<c:if test="${!empty class_num}"><a>クラス：${class_num }</a></c:if>
+					<c:choose>
+						<c:when test= "${attend != null}">
+						<a>在学状況：〇</a>
+						</c:when>
+						<c:otherwise>
+						<a>在学状況：×</a>
+						</c:otherwise>
+					</c:choose>
+				</c:otherwise>
+				</c:choose>
+
+
+
+
 				<table class="table table-hover">
 				<tr>
 					<th>入学年度</th>
@@ -94,6 +115,23 @@ pageEncoding="UTF-8"%>
 	</table>
 	</c:when>
 	<c:otherwise>
+	<c:choose>
+				<c:when test= "${attend ==null  && empty ent_year && empty class_num}"></c:when>
+
+				<c:otherwise>
+				<div class="mincho">検索結果>>></div>
+					<c:if test="${!empty ent_year}"><a>入学年度：${ent_year }</a></c:if>
+					<c:if test="${!empty class_num}"><a>クラス：${class_num }</a></c:if>
+					<c:choose>
+						<c:when test= "${attend != null}">
+						<a>在学状況：〇</a>
+						</c:when>
+						<c:otherwise>
+						<a>在学状況：×</a>
+						</c:otherwise>
+					</c:choose>
+				</c:otherwise>
+				</c:choose>
 		<h1>学生情報が存在しませんでした</h1>
 	</c:otherwise>
 	</c:choose>

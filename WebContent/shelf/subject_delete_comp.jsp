@@ -5,7 +5,7 @@ pageEncoding="UTF-8"%>
 <c:import url="/common/base.jsp">
 
 <c:param name="title">
-			<title>科目情報削除完了</title>
+			<title>-科目情報削除完了-</title>
 		<div id = "title">得点管理システム</div>
 	</c:param>
 	<c:param name="scripts"></c:param>

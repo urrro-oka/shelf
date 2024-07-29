@@ -6,7 +6,7 @@
 %>
 <c:import url="/common/base.jsp">
 	<c:param name="title">
-		<title>得点管理システム</title>
+		<title>-成績一覧(生徒別)-</title>
 		<div id="title">得点管理システム</div>
 	</c:param>
 	<c:param name="scripts"></c:param>

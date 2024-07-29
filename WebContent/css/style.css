@@ -327,7 +327,7 @@ table th,table td{
 	left:25%;
 
 }
-.login_page{
+.login_page,.error{
 	text-align:center;
 	font-family: serif;
 	border: 1px solid #b1d3eb;
@@ -339,4 +339,7 @@ table th,table td{
   	margin-top:5%;
   	margin-bottom:auto;
 }
-
+.mincho{
+	display:inline-block;
+	font-family: serif;
+}

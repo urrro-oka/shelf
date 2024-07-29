@@ -4,7 +4,7 @@ pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 <c:import url="/common/base.jsp">
 	<c:param name="title">
-			<title>得点管理システム</title>
+			<title>-成績変更完了-</title>
 		<div id = "title">得点管理システム</div>
 	</c:param>
 	<c:param name="side">　　<a class="linkhover branchside" href="Test_entry.action">成績登録</a><br></c:param>

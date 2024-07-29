@@ -4,8 +4,8 @@ pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 <c:import url="/common/base.jsp">
 	<c:param name="title">
-			<title>得点管理システム</title>
-		<div id = "title">得点管理システム</div>
+			<title></title>
+		<div id = "title">-学生新規登録-</div>
 	</c:param>
 	<c:param name="scripts"></c:param>
 	<c:param name="content">

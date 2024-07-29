@@ -70,19 +70,47 @@ public class StudentDAO extends DAO {
 	 * @return list<Student>
 	 * @throws Exception
 	 */
-	public List<Student> Student_search(String ent_year,String class_num,String attend) throws Exception {
+	public List<Student> Student_search1(String ent_year,String class_num) throws Exception {
 		List<Student> list=new ArrayList<>();
 
 		Connection con = getConnection();
-		Boolean is_attend = Boolean.valueOf(attend);
-		if(is_attend){
 			PreparedStatement st = con.prepareStatement(
 					"select * from Student "
-					+ "where (ENT_YEAR like ?) AND (CLASS_NUM like ?)AND(IS_ATTEND like ?) ORDER BY No");
+					+ "where (ENT_YEAR like ?) AND (CLASS_NUM like ?)AND(IS_ATTEND = TRUE) ORDER BY No");
 			st.setString(1,"%"+ent_year+"%");
 			st.setString(2,"%"+class_num+"%");
-			st.setBoolean(3,is_attend);
 			ResultSet rs = st.executeQuery();
+
+			System.out.println("A");
+
+			while(rs.next()){
+				Student p = new Student();
+				p.setNo(rs.getString("no"));
+				p.setName(rs.getString("name"));
+				p.setEnt_year(rs.getInt("ent_year"));
+				p.setClass_num(rs.getString("class_num"));
+				p.setIs_attend(rs.getBoolean("Is_attend"));
+				p.setSchool_code(rs.getString("school_cd"));
+				list.add(p);
+			}
+			st.close();
+			con.close();
+
+			return list;
+		}
+
+	public List<Student> Student_search2(String ent_year,String class_num) throws Exception {
+		List<Student> list=new ArrayList<>();
+
+		Connection con = getConnection();
+			PreparedStatement st = con.prepareStatement(
+					"select * from Student "
+					+ "where (ENT_YEAR like ?) AND (CLASS_NUM like ?)AND(IS_ATTEND = FALSE) ORDER BY No");
+			st.setString(1,"%"+ent_year+"%");
+			st.setString(2,"%"+class_num+"%");
+			ResultSet rs = st.executeQuery();
+
+			System.out.println("B");
 
 
 			while(rs.next()){
@@ -100,31 +128,6 @@ public class StudentDAO extends DAO {
 
 			return list;
 		}
-		else{
-			PreparedStatement st = con.prepareStatement(
-					"select * from Student "
-					+ "where (ENT_YEAR like ?) AND (CLASS_NUM like ?) ORDER BY No");
-			st.setString(1,"%"+ent_year+"%");
-			st.setString(2,"%"+class_num+"%");
-			ResultSet rs = st.executeQuery();
-
-
-			while(rs.next()){
-				Student p = new Student();
-				p.setNo(rs.getString("no"));
-				p.setName(rs.getString("name"));
-				p.setEnt_year(rs.getInt("ent_year"));
-				p.setClass_num(rs.getString("class_num"));
-				p.setIs_attend(rs.getBoolean("Is_attend"));
-				p.setSchool_code(rs.getString("school_cd"));
-				list.add(p);
-			}
-			st.close();
-			con.close();
-
-			return list;
-		}
-	}
 
 	/**
 	 * Student表へデータを挿入する。
