@@ -81,7 +81,7 @@ a{
 }
 .menubox1{
 	display:inline-block;
-	padding: 7% 13%;
+	padding: 7% 6%;
 	font-size: 1.7em;
 
 
@@ -360,12 +360,12 @@ table th,table td{
 	border-color:#54b9f5;
 	font-family: serif;
 
+
 }
 
 .ef2:focus{
 	outline: none;
 	font-family: serif;
-
 }
 .puru{
 	border:solid 2px #54b9f5;
