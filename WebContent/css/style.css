@@ -1,3 +1,6 @@
+body,table{
+		font-family: serif;
+}
 .toptitle {
 	text-align: center;
 	color: #54b9f5;
@@ -190,7 +193,7 @@ footer {
   opacity: 0;
 }
 .fore-check-input:checked + .ECM_CheckboxInput-DummyInput {
-  background: rgba(107, 26, 250, 1);
+  background:#4d9dff;
 }
 .fore-check-input:checked + .ECM_CheckboxInput-DummyInput::before {
   content: "";
@@ -262,14 +265,12 @@ table tr{
 }
 
 table th{
-	font-family: sans-serif;
   background-color: #e3f5ff;
   position:sticky;
   top:0;
 
 }
 table td{
-	font-family: sans-serif;
 	border-top:solid 1px #ccc
 }
 
