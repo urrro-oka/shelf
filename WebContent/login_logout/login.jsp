@@ -24,7 +24,7 @@ pageEncoding="UTF-8"%>
             <th><label for="id">ログインＩＤ</label></th>
             <td>
             <div class="cp_iptxt">
-            <input type="text" class ="ef"  class="ef" name="id" maxlength="20" placeholder="半角でご入力ください" required>
+            <input type="text" class ="ef" name="id" maxlength="20" placeholder="半角でご入力ください" required>
             <span class="focus_line"><i></i></span>
             </div></td>
 
@@ -32,7 +32,7 @@ pageEncoding="UTF-8"%>
 
         <tr>
             <th><label for="password">パスワード</label></th>
-            <td><input type="password" id="password" name="password" maxlength="20" placeholder="20文字以内の半角英数字でご入力ください" required></td>
+            <td><input type="password" class ="ef" id="password" name="password" maxlength="20" placeholder="20文字以内の半角英数字でご入力ください" required></td>
 		</tr>
 
 		<tr>
