@@ -291,7 +291,7 @@ table th,table td{
 }
 
 .btn:hover {
-	transition: all .30s linear;
+	transition: all .20s linear;
   color: #fff;
   background: #54b9f5;
 }
@@ -309,7 +309,7 @@ table th,table td{
 }
 
 .btnl:hover {
-	transition: all .30s linear;
+	transition: all .20s linear;
   color: #fff;
   background: #54b9f5;
 }
@@ -342,4 +342,12 @@ table th,table td{
 .mincho{
 	display:inline-block;
 	font-family: serif;
+}
+.ef{
+	size:10%;
+}
+
+.ef:focus{
+	color:red;
+	border-color:red;
 }

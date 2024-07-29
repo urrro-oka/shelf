@@ -22,7 +22,12 @@ pageEncoding="UTF-8"%>
     <table>
         <tr>
             <th><label for="id">ログインＩＤ</label></th>
-            <td><input type="text" id="id" name="id" maxlength="20" placeholder="半角でご入力ください" required></td>
+            <td>
+            <div class="cp_iptxt">
+            <input type="text" class="ef" name="id" maxlength="20" placeholder="半角でご入力ください" required>
+            <span class="focus_line"><i></i></span>
+            </div></td>
+
         </tr>
 
         <tr>
